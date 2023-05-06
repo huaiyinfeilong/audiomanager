@@ -5,6 +5,7 @@ import addonHandler
 import scriptHandler
 import ui
 from .audioManager import AudioManager
+from .audioNavigator import PlaybackDeviceNavigator
 
 
 addonHandler.initTranslation()
@@ -17,6 +18,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	# 插件初始化
 	def __init__(self):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
+		self.audioNavigator = None
+		self.playbackDeviceNavigator = PlaybackDeviceNavigator()
 		self.audioManager = AudioManager()
 		self.audioManager.initialize()
 		self.currentPlaybackDeviceIndex = 0
@@ -33,12 +36,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gesture="kb:CONTROL+WINDOWS+ALT+NUMPAD6"
 	)
 	def script_nextPlaybackDevice(self, gesture):
-		self.audioManager.initialize()
-		self.currentPlaybackDeviceIndex = (self.currentPlaybackDeviceIndex + self.playbackDeviceCount + 1) \
-		% self.playbackDeviceCount
-		name = self.audioManager.getPlaybackDeviceName(self.currentPlaybackDeviceIndex)
-		name = "{}: {}".format(self.currentPlaybackDeviceIndex + 1, name)
-		ui.message(name)
+		self.playbackDeviceNavigator.next()
+		self.audioNavigator = self.playbackDeviceNavigator
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
@@ -47,12 +46,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gesture="kb:CONTROL+WINDOWS+ALT+NUMPAD4"
 	)
 	def script_PrevPlaybackDevice(self, gesture):
-		self.audioManager.initialize()
-		self.currentPlaybackDeviceIndex = (self.currentPlaybackDeviceIndex + self.playbackDeviceCount - 1) \
-		% self.playbackDeviceCount
-		name = self.audioManager.getPlaybackDeviceName(self.currentPlaybackDeviceIndex)
-		name = "{}: {}".format(self.currentPlaybackDeviceIndex + 1, name)
-		ui.message(name)
+		self.playbackDeviceNavigator.previous()
+		self.audioNavigator = self.playbackDeviceNavigator
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
