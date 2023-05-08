@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'audioManager' '1.0.0'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-05-07 14:51+0800\n"
-"PO-Revision-Date: 2023-05-07 14:53+0800\n"
+"POT-Creation-Date: 2023-05-08 21:59+0800\n"
+"PO-Revision-Date: 2023-05-08 22:01+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -58,15 +58,25 @@ msgstr "上一个会话"
 
 #. Translators: Volume up
 #: addon\globalPlugins\audioManager\__init__.py:89
-#: addon\globalPlugins\audioManager\audioNavigator.py:14
+#: addon\globalPlugins\audioManager\audioNavigator.py:13
 msgid "Volume up"
 msgstr "增大音量"
 
 #. Translators: Volume down
 #: addon\globalPlugins\audioManager\__init__.py:98
-#: addon\globalPlugins\audioManager\audioNavigator.py:16
+#: addon\globalPlugins\audioManager\audioNavigator.py:15
 msgid "Volume down"
 msgstr "减小音量"
+
+#. Translators: Mute or unmute the device
+#: addon\globalPlugins\audioManager\__init__.py:107
+msgid "Mute or unmute the device"
+msgstr "对设备静音或取消静音"
+
+#. Translators: Set to as default device
+#: addon\globalPlugins\audioManager\__init__.py:116
+msgid "Set to as default device"
+msgstr "设为默认设备"
 
 #. Translators: System volume
 #: addon\globalPlugins\audioManager\audioManager.py:12
@@ -74,9 +84,29 @@ msgid "System sound"
 msgstr "系统声音"
 
 #. Translators: Volume field name
-#: addon\globalPlugins\audioManager\audioNavigator.py:12
+#: addon\globalPlugins\audioManager\audioNavigator.py:11
 msgid "Volume"
 msgstr "音量"
+
+#. Translators: Muted
+#: addon\globalPlugins\audioManager\audioNavigator.py:17
+msgid "Muted"
+msgstr "已静音"
+
+#. Translators: Unmuted
+#: addon\globalPlugins\audioManager\audioNavigator.py:19
+msgid "Unmuted"
+msgstr "已取消静音"
+
+#. Translators: As default playback device
+#: addon\globalPlugins\audioManager\audioNavigator.py:21
+msgid "As default playback device"
+msgstr "作为默认播放设备"
+
+#. Translators: As default recording device
+#: addon\globalPlugins\audioManager\audioNavigator.py:23
+msgid "As default recording device"
+msgstr "作为默认录音设备"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager

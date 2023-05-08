@@ -103,8 +103,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
-		# Translators: Mute or unmute to device or session sound
-		description=_("Mute or unmute to device or session sound"),
+		# Translators: Mute or unmute the device
+		description=_("Mute or unmute the device"),
 		gesture="kb:CONTROL+WINDOWS+ALT+NUMPAD5"
 	)
 	def script_mute(self, gesture):
@@ -114,7 +114,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Set to as default device
 		description=_("Set to as default device"),
-		gesture="kb:CONTROL+WINDOWS+ALT+NUMPADRETURN"
+		gesture="kb:CONTROL+WINDOWS+ALT+NUMPADENTER"
 	)
 	def script_mute(self, gesture):
 		self.audioNavigator.asDefault()

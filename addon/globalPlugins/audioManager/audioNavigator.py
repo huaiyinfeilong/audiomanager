@@ -3,7 +3,6 @@
 from .audioManager import AudioManager
 import ui
 import addonHandler
-from logHandler import log
 
 
 addonHandler.initTranslation()
@@ -112,11 +111,9 @@ class PlaybackDeviceNavigator(AudioNavigator):
 
 	def asDefault(self):
 		self.audioManager.initialize()
-		count = self.audioManager.getPlaybackDeviceCount()
-		self.current = (self.current + count + 1) % count
 		self.audioManager.SetDefaultPlaybackDevice(self.current)
 		self.current = self.audioManager.GetDefaultPlaybackDevice()
-		name = self.audioManager.getPlaybackDeviceName()
+		name = self.audioManager.getPlaybackDeviceName(self.current)
 		message = f"{name} {_(CONSTANT_AS_DEFAULT_PLAYBACK_DEVICE)}"
 		ui.message(message)
 		self.audioManager.uninitialize()
@@ -170,6 +167,16 @@ class RecordingDeviceNavigator(AudioNavigator):
 		ui.message(message)
 		self.audioManager.uninitialize()
 
+	# 设置默认录音设备
+	def asDefault(self):
+		self.audioManager.initialize()
+		self.audioManager.SetDefaultRecordingDevice(self.current)
+		self.current = self.audioManager.GetDefaultRecordingDevice()
+		name = self.audioManager.getRecordingDeviceName(self.current)
+		message = f"{name} {_(CONSTANT_AS_DEFAULT_RECORDING_DEVICE)}"
+		ui.message(message)
+		self.audioManager.uninitialize()
+
 
 # 会话导航器类
 class SessionNavigator(AudioNavigator):
@@ -218,3 +225,8 @@ class SessionNavigator(AudioNavigator):
 		message = f"{volume} {name}"
 		ui.message(message)
 		self.audioManager.uninitialize()
+
+	# 继承基类，空实现
+	def asDefault(self):
+		# 什么也不用做
+		pass

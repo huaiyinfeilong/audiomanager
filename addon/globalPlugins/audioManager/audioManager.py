@@ -141,11 +141,11 @@ class AudioManager(object):
 	# 设置默认播放设备
 	def SetDefaultPlaybackDevice(self, index):
 		dwIndex = wintypes.DWORD(index)
-		self.LAM_SetDefaultlaybackDevice(dwIndex)
+		self.LAM_SetDefaultPlaybackDevice(dwIndex)
 
 	# 获取默认播放设备
 	def GetDefaultPlaybackDevice(self):
-		return wintypes.DWORD(self.LAM_GetDefaultPlaybackDevice())
+		return wintypes.DWORD(self.LAM_GetDefaultPlaybackDevice()).value
 
 	# 获取录音设备数量		
 	def getRecordingDeviceCount(self):
