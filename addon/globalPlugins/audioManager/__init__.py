@@ -100,3 +100,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_volumeDown(self, gesture):
 		self.audioNavigator.volumeDown()
+
+	@scriptHandler.script(
+		category=CATEGORY_NAME,
+		# Translators: Volume down
+		description=_("Mute or unmute to device or session sound"),
+		gesture="kb:CONTROL+WINDOWS+ALT+NUMPAD5"
+	)
+	def script_mute(self, gesture):
+		self.audioNavigator.mute()

@@ -11,7 +11,6 @@ addonHandler.initTranslation()
 # Translators: System volume
 CONSTANT_SYSTEM_SOUND = _("System sound")
 
-
 class AudioManager(object):
 	def __init__(self):
 		self._loadLibrary()
@@ -38,13 +37,13 @@ class AudioManager(object):
 		# 设置播放设备音量
 		self.LAM_SetPlaybackDeviceVolume = self.api.LAM_SetPlaybackDeviceVolume
 		self.LAM_SetPlaybackDeviceVolume .argtypes = (wintypes.DWORD, wintypes.DWORD)
-	# 设置播放设备静音
-	self.LAM_SetPlaybackDeviceMute = self.api.LAM_SetPlaybackDeviceMute
-	self.LAM_SetPlaybackDeviceMute.argtypes = (wintypes.DWORD, wintypes.BOOL)
-	# 获取播放设备静音状态
-	self.LAM_GetPlaybackDeviceMute = self.api.LAM_GetPlaybackDeviceMute
-	self.LAM_GetPlaybackDeviceMute.args = (wintypes.DWORD,)
-	self.LAM_GetPlaybackDeviceMute.restype = wintypes.BOOL
+		# 设置播放设备静音
+		self.LAM_SetPlaybackDeviceMute = self.api.LAM_SetPlaybackDeviceMute
+		self.LAM_SetPlaybackDeviceMute.argtypes = (wintypes.DWORD, wintypes.BOOL)
+		# 获取播放设备静音状态
+		self.LAM_GetPlaybackDeviceMute = self.api.LAM_GetPlaybackDeviceMute
+		self.LAM_GetPlaybackDeviceMute.args = (wintypes.DWORD,)
+		self.LAM_GetPlaybackDeviceMute.restype = wintypes.BOOL
 		# 获取录音设备数量
 		self.LAM_GetRecordingDeviceCount = self.api.LAM_GetRecordingDeviceCount
 		self.LAM_GetRecordingDeviceCount.restype = wintypes.DWORD
@@ -59,13 +58,13 @@ class AudioManager(object):
 		# 设置录音设备音量
 		self.LAM_SetRecordingDeviceVolume = self.api.LAM_SetRecordingDeviceVolume
 		self.LAM_SetRecordingDeviceVolume .argtypes = (wintypes.DWORD, wintypes.DWORD)
-	# 设置录音设备静音
-	self.LAM_SetRecordingDeviceMute = self.api.LAM_SetRecordingDeviceMute
-	self.LAM_SetRecordingDeviceMute.argtypes = (wintypes.DWORD, wintypes.BOOL)
-	# 获取录音设备静音状态
-	self.LAM_GetRecordingDeviceMute = self.api.LAM_GetRecordingDeviceMute
-	self.LAM_GetRecordingDeviceMute.args = (wintypes.DWORD,)
-	self.LAM_GetRecordingDeviceMute.restype = wintypes.BOOL
+		# 设置录音设备静音
+		self.LAM_SetRecordingDeviceMute = self.api.LAM_SetRecordingDeviceMute
+		self.LAM_SetRecordingDeviceMute.argtypes = (wintypes.DWORD, wintypes.BOOL)
+		# 获取录音设备静音状态
+		self.LAM_GetRecordingDeviceMute = self.api.LAM_GetRecordingDeviceMute
+		self.LAM_GetRecordingDeviceMute.args = (wintypes.DWORD,)
+		self.LAM_GetRecordingDeviceMute.restype = wintypes.BOOL
 		# 获取会话数量
 		self.LAM_GetSessionCount = self.api.LAM_GetSessionCount
 		self.LAM_GetSessionCount.restype = wintypes.DWORD
@@ -80,13 +79,13 @@ class AudioManager(object):
 		# 设置会话音量
 		self.LAM_SetSessionVolume = self.api.LAM_SetSessionVolume
 		self.LAM_SetSessionVolume .argtypes = (wintypes.DWORD, wintypes.DWORD)
-	# 设置会话静音
-	self.LAM_SetSessionMute = self.api.LAM_SetSessionMute
-	self.LAM_SetSessionMute.argtypes = (wintypes.DWORD, wintypes.BOOL)
-	# 获取会话静音状态
-	self.LAM_GetSessionMute = self.api.LAM_GetSessionMute
-	self.LAM_GetSessionMute.args = (wintypes.DWORD,)
-	self.LAM_GetSessionMute.restype = wintypes.BOOL
+		# 设置会话静音
+		self.LAM_SetSessionMute = self.api.LAM_SetSessionMute
+		self.LAM_SetSessionMute.argtypes = (wintypes.DWORD, wintypes.BOOL)
+		# 获取会话静音状态
+		self.LAM_GetSessionMute = self.api.LAM_GetSessionMute
+		self.LAM_GetSessionMute.args = (wintypes.DWORD,)
+		self.LAM_GetSessionMute.restype = wintypes.BOOL
 
 	# 初始化
 	def initialize(self):
@@ -121,7 +120,19 @@ class AudioManager(object):
 		dwVolume = wintypes.DWORD(volume)
 		self.LAM_SetPlaybackDeviceVolume(dwIndex, dwVolume)
 
-	# 获取录音设备数量
+	# 设置播放设备静音状态
+	def setPlaybackDeviceMute(self, index, mute):
+		dwIndex = wintypes.DWORD(index)
+		bMute = wintypes.BOOL(mute)
+		self.LAM_SetPlaybackDeviceMute(dwIndex, bMute)
+
+	# 获取播放设备静音状态
+	def getPlaybackDeviceMute(self, index):
+		dwIndex = wintypes.DWORD(index)
+		mute = self.LAM_GetPlaybackDeviceMute(dwIndex)
+		return wintypes.BOOL(mute)
+
+	# 获取录音设备数量		
 	def getRecordingDeviceCount(self):
 		dwCount = wintypes.DWORD(self.LAM_GetRecordingDeviceCount())
 		return dwCount.value
@@ -145,6 +156,18 @@ class AudioManager(object):
 		dwIndex = wintypes.DWORD(index)
 		dwVolume = wintypes.DWORD(volume)
 		self.LAM_SetRecordingDeviceVolume(dwIndex, dwVolume)
+
+	# 设置录音设备静音状态
+	def setRecordingDeviceMute(self, index, mute):
+		dwIndex = wintypes.DWORD(index)
+		bMute = wintypes.BOOL(mute)
+		self.LAM_SetRecordingDeviceMute(dwIndex, bMute)
+
+	# 获取录音设备静音状态
+	def getRecordingDeviceMute(self, index):
+		dwIndex = wintypes.DWORD(index)
+		mute = self.LAM_GetRecordingDeviceMute(dwIndex)
+		return wintypes.BOOL(mute)
 
 	# 获取会话数量
 	def getSessionCount(self):
@@ -172,3 +195,15 @@ class AudioManager(object):
 		dwIndex = wintypes.DWORD(index)
 		dwVolume = wintypes.DWORD(volume)
 		self.LAM_SetSessionVolume(dwIndex, dwVolume)
+
+	# 设置会话静音状态
+	def setSessionMute(self, index, mute):
+		dwIndex = wintypes.DWORD(index)
+		bMute = wintypes.BOOL(mute)
+		self.LAM_SetSessionMute(dwIndex, bMute)
+
+	# 获取会话静音状态
+	def getSessionMute(self, index):
+		dwIndex = wintypes.DWORD(index)
+		mute = self.LAM_GetSessionMute(dwIndex)
+		return wintypes.BOOL(mute)

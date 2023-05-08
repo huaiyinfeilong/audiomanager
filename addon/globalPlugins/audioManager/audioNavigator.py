@@ -14,6 +14,10 @@ CONSTANT_VOLUME = _("Volume")
 CONSTANT_VOLUME_UP = _("Volume up")
 # Translators: Volume down
 CONSTANT_VOLUME_DOWN = _("Volume down")
+# Translators: Muted
+CONSTANT_MUTED = _("Muted")
+# Translators: Unmuted
+CONSTANT_UNMUTED = _("Unmuted")
 
 
 # 音频导航器接口类
@@ -84,6 +88,18 @@ class PlaybackDeviceNavigator(AudioNavigator):
 		name = self.audioManager.getPlaybackDeviceName(self.current)
 		self.audioManager.setPlaybackDeviceVolume(self.current, volume)
 		message = f"{volume} {name}"
+		ui.message(message)
+		self.audioManager.uninitialize()
+
+	# 静音播放设备
+	def mute(self):
+		self.audioManager.initialize()
+		mute = self.audioManager.getPlaybackDeviceMute(self.current)
+		self.audioManager.setPlaybackDeviceMute(self.current, not mute)
+		mute = self.audioManager.getPlaybackDeviceMute(self.current)
+		state = _(CONSTANT_MUTED) if mute else _(CONSTANT_UNMUTED)
+		name = self.audioManager.getPlaybackDeviceName(self.current)
+		message = f"{state} {name}"
 		ui.message(message)
 		self.audioManager.uninitialize()
 
