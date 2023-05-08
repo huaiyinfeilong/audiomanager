@@ -18,6 +18,10 @@ CONSTANT_VOLUME_DOWN = _("Volume down")
 CONSTANT_MUTED = _("Muted")
 # Translators: Unmuted
 CONSTANT_UNMUTED = _("Unmuted")
+# Translators: As default playback device
+CONSTANT_AS_DEFAULT_PLAYBACK_DEVICE = _("As default playback device")
+# Translators: As default recording device
+CONSTANT_AS_DEFAULT_RECORDING_DEVICE = _("As default recording device")
 
 
 # 音频导航器接口类
@@ -38,6 +42,9 @@ class AudioNavigator(object):
 		raise TypeError(self._exceptionMessage)
 
 	def volumeDown(self):
+		raise TypeError(self._exceptionMessage)
+
+	def asDefault(self):
 		raise TypeError(self._exceptionMessage)
 
 
@@ -100,6 +107,17 @@ class PlaybackDeviceNavigator(AudioNavigator):
 		state = _(CONSTANT_MUTED) if mute else _(CONSTANT_UNMUTED)
 		name = self.audioManager.getPlaybackDeviceName(self.current)
 		message = f"{state} {name}"
+		ui.message(message)
+		self.audioManager.uninitialize()
+
+	def asDefault(self):
+		self.audioManager.initialize()
+		count = self.audioManager.getPlaybackDeviceCount()
+		self.current = (self.current + count + 1) % count
+		self.audioManager.SetDefaultPlaybackDevice(self.current)
+		self.current = self.audioManager.GetDefaultPlaybackDevice()
+		name = self.audioManager.getPlaybackDeviceName()
+		message = f"{name} {_(CONSTANT_AS_DEFAULT_PLAYBACK_DEVICE)}"
 		ui.message(message)
 		self.audioManager.uninitialize()
 

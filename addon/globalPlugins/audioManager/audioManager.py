@@ -44,6 +44,12 @@ class AudioManager(object):
 		self.LAM_GetPlaybackDeviceMute = self.api.LAM_GetPlaybackDeviceMute
 		self.LAM_GetPlaybackDeviceMute.args = (wintypes.DWORD,)
 		self.LAM_GetPlaybackDeviceMute.restype = wintypes.BOOL
+		# 设置默认播放设备
+		self.LAM_SetDefaultPlaybackDevice = self.api.LAM_SetDefaultPlaybackDevice
+		self.LAM_SetDefaultPlaybackDevice.argtypes = (wintypes.DWORD,)
+		# 获取默认播放设备
+		self.LAM_GetDefaultPlaybackDevice = self.api.LAM_GetDefaultPlaybackDevice
+		self.LAM_GetDefaultPlaybackDevice.restype = wintypes.DWORD
 		# 获取录音设备数量
 		self.LAM_GetRecordingDeviceCount = self.api.LAM_GetRecordingDeviceCount
 		self.LAM_GetRecordingDeviceCount.restype = wintypes.DWORD
@@ -131,6 +137,15 @@ class AudioManager(object):
 		dwIndex = wintypes.DWORD(index)
 		mute = self.LAM_GetPlaybackDeviceMute(dwIndex)
 		return wintypes.BOOL(mute)
+
+	# 设置默认播放设备
+	def SetDefaultPlaybackDevice(self, index):
+		dwIndex = wintypes.DWORD(index)
+		self.LAM_SetDefaultlaybackDevice(dwIndex)
+
+	# 获取默认播放设备
+	def GetDefaultPlaybackDevice(self):
+		return wintypes.DWORD(self.LAM_GetDefaultPlaybackDevice())
 
 	# 获取录音设备数量		
 	def getRecordingDeviceCount(self):
