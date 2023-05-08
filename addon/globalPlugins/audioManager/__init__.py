@@ -3,7 +3,6 @@
 import globalPluginHandler
 import addonHandler
 import scriptHandler
-import ui
 from .audioManager import AudioManager
 from .audioNavigator import PlaybackDeviceNavigator, RecordingDeviceNavigator, SessionNavigator
 
@@ -116,5 +115,5 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description=_("Set to as default device"),
 		gesture="kb:CONTROL+WINDOWS+ALT+NUMPADENTER"
 	)
-	def script_mute(self, gesture):
+	def script_asDefault(self, gesture):
 		self.audioNavigator.asDefault()

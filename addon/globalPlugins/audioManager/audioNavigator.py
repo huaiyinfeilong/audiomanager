@@ -167,6 +167,18 @@ class RecordingDeviceNavigator(AudioNavigator):
 		ui.message(message)
 		self.audioManager.uninitialize()
 
+	# 静音录音设备
+	def mute(self):
+		self.audioManager.initialize()
+		mute = self.audioManager.getRecordingDeviceMute(self.current)
+		self.audioManager.setRecordingDeviceMute(self.current, not mute)
+		mute = self.audioManager.getRecordingDeviceMute(self.current)
+		state = _(CONSTANT_MUTED) if mute else _(CONSTANT_UNMUTED)
+		name = self.audioManager.getRecordingDeviceName(self.current)
+		message = f"{state} {name}"
+		ui.message(message)
+		self.audioManager.uninitialize()
+
 	# 设置默认录音设备
 	def asDefault(self):
 		self.audioManager.initialize()
@@ -223,6 +235,18 @@ class SessionNavigator(AudioNavigator):
 		name = self.audioManager.getSessionName(self.current)
 		self.audioManager.setSessionVolume(self.current, volume)
 		message = f"{volume} {name}"
+		ui.message(message)
+		self.audioManager.uninitialize()
+
+	# 静音会话
+	def mute(self):
+		self.audioManager.initialize()
+		mute = self.audioManager.getSessionMute(self.current)
+		self.audioManager.setSessionMute(self.current, not mute)
+		mute = self.audioManager.getSessionMute(self.current)
+		state = _(CONSTANT_MUTED) if mute else _(CONSTANT_UNMUTED)
+		name = self.audioManager.getSessionName(self.current)
+		message = f"{state} {name}"
 		ui.message(message)
 		self.audioManager.uninitialize()
 

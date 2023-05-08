@@ -71,6 +71,12 @@ class AudioManager(object):
 		self.LAM_GetRecordingDeviceMute = self.api.LAM_GetRecordingDeviceMute
 		self.LAM_GetRecordingDeviceMute.args = (wintypes.DWORD,)
 		self.LAM_GetRecordingDeviceMute.restype = wintypes.BOOL
+		# 设置默认录音设备
+		self.LAM_SetDefaultRecordingDevice = self.api.LAM_SetDefaultRecordingDevice
+		self.LAM_SetDefaultRecordingDevice.argtypes = (wintypes.DWORD,)
+		# 获取默认录音设备
+		self.LAM_GetDefaultRecordingDevice = self.api.LAM_GetDefaultRecordingDevice
+		self.LAM_GetDefaultRecordingDevice.restype = wintypes.DWORD
 		# 获取会话数量
 		self.LAM_GetSessionCount = self.api.LAM_GetSessionCount
 		self.LAM_GetSessionCount.restype = wintypes.DWORD
@@ -183,6 +189,15 @@ class AudioManager(object):
 		dwIndex = wintypes.DWORD(index)
 		mute = self.LAM_GetRecordingDeviceMute(dwIndex)
 		return wintypes.BOOL(mute)
+
+	# 设置默认录音设备
+	def SetDefaultRecordingDevice(self, index):
+		dwIndex = wintypes.DWORD(index)
+		self.LAM_SetDefaultRecordingDevice(dwIndex)
+
+	# 获取默认录音设备
+	def GetDefaultRecordingDevice(self):
+		return wintypes.DWORD(self.LAM_GetDefaultRecordingDevice()).value
 
 	# 获取会话数量
 	def getSessionCount(self):
