@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'audioManager' '1.0.0'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-05-06 16:17+0800\n"
-"PO-Revision-Date: 2023-05-06 16:17+0800\n"
+"POT-Creation-Date: 2023-05-07 14:51+0800\n"
+"PO-Revision-Date: 2023-05-07 14:53+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -22,14 +22,61 @@ msgstr ""
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
 #. to be shown on installation and add-on information found in Add-ons Manager.
-#: addon\globalPlugins\audioManager\__init__.py:12 buildVars.py:23
+#: addon\globalPlugins\audioManager\__init__.py:14 buildVars.py:23
 msgid "Audio Manager"
 msgstr "音频管理器"
 
 #. Translators: Next playback device
-#: addon\globalPlugins\audioManager\__init__.py:19
+#: addon\globalPlugins\audioManager\__init__.py:29
 msgid "Next playback device"
 msgstr "下一个播放设备"
+
+#. Translators: Previous playback device
+#: addon\globalPlugins\audioManager\__init__.py:39
+msgid "Previous playback device"
+msgstr "上一个播放设备"
+
+#. Translators: Next Recording device
+#: addon\globalPlugins\audioManager\__init__.py:49
+msgid "Next Recording device"
+msgstr "下一个录音设备"
+
+#. Translators: Previous Recording device
+#: addon\globalPlugins\audioManager\__init__.py:59
+msgid "Previous Recording device"
+msgstr "上一个录音设备"
+
+#. Translators: Next Sessioning device
+#: addon\globalPlugins\audioManager\__init__.py:69
+msgid "Next Session"
+msgstr "下一个会话"
+
+#. Translators: Previous Sessioning device
+#: addon\globalPlugins\audioManager\__init__.py:79
+msgid "Previous Session"
+msgstr "上一个会话"
+
+#. Translators: Volume up
+#: addon\globalPlugins\audioManager\__init__.py:89
+#: addon\globalPlugins\audioManager\audioNavigator.py:14
+msgid "Volume up"
+msgstr "增大音量"
+
+#. Translators: Volume down
+#: addon\globalPlugins\audioManager\__init__.py:98
+#: addon\globalPlugins\audioManager\audioNavigator.py:16
+msgid "Volume down"
+msgstr "减小音量"
+
+#. Translators: System volume
+#: addon\globalPlugins\audioManager\audioManager.py:12
+msgid "System sound"
+msgstr "系统声音"
+
+#. Translators: Volume field name
+#: addon\globalPlugins\audioManager\audioNavigator.py:12
+msgid "Volume"
+msgstr "音量"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager

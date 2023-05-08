@@ -5,7 +5,7 @@ import addonHandler
 import scriptHandler
 import ui
 from .audioManager import AudioManager
-from .audioNavigator import PlaybackDeviceNavigator
+from .audioNavigator import PlaybackDeviceNavigator, RecordingDeviceNavigator, SessionNavigator
 
 
 addonHandler.initTranslation()
@@ -20,14 +20,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
 		self.audioNavigator = None
 		self.playbackDeviceNavigator = PlaybackDeviceNavigator()
-		self.audioManager = AudioManager()
-		self.audioManager.initialize()
-		self.currentPlaybackDeviceIndex = 0
-		self.playbackDeviceCount = self.audioManager.getPlaybackDeviceCount()
-		self.currentrecordingDeviceIndex = 0
-		self.recordingDeviceCount = self.audioManager.getRecordingDeviceCount()
-		self.currentSessionIndex = 0
-		self.sessionCount = self.audioManager.getSessionCount()
+		self.recordingDeviceNavigator = RecordingDeviceNavigator()
+		self.sessionNavigator = SessionNavigator()
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
@@ -56,12 +50,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gesture="kb:CONTROL+WINDOWS+ALT+NUMPAD3"
 	)
 	def script_nextrecordingDevice(self, gesture):
-		self.audioManager.initialize()
-		self.currentrecordingDeviceIndex = (self.currentrecordingDeviceIndex + self.recordingDeviceCount + 1) \
-		% self.recordingDeviceCount
-		name = self.audioManager.getRecordingDeviceName(self.currentrecordingDeviceIndex)
-		name = "{}: {}".format(self.currentrecordingDeviceIndex + 1, name)
-		ui.message(name)
+		self.recordingDeviceNavigator.next()
+		self.audioNavigator = self.recordingDeviceNavigator
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
@@ -70,12 +60,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gesture="kb:CONTROL+WINDOWS+ALT+NUMPAD1"
 	)
 	def script_PrevrecordingDevice(self, gesture):
-		self.audioManager.initialize()
-		self.currentrecordingDeviceIndex = (self.currentrecordingDeviceIndex + self.recordingDeviceCount - 1) \
-		% self.recordingDeviceCount
-		name = self.audioManager.getRecordingDeviceName(self.currentrecordingDeviceIndex)
-		name = "{}: {}".format(self.currentrecordingDeviceIndex + 1, name)
-		ui.message(name)
+		self.recordingDeviceNavigator.previous()
+		self.audioNavigator = self.recordingDeviceNavigator
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
@@ -84,12 +70,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gesture="kb:CONTROL+WINDOWS+ALT+NUMPAD9"
 	)
 	def script_nextSession(self, gesture):
-		self.audioManager.initialize()
-		self.currentSessionIndex = (self.currentSessionIndex + self.sessionCount + 1) \
-		% self.sessionCount
-		name = self.audioManager.getSessionName(self.currentSessionIndex)
-		name = "{}: {}".format(self.currentSessionIndex + 1, name)
-		ui.message(name)
+		self.sessionNavigator.next()
+		self.audioNavigator = self.sessionNavigator
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
@@ -98,9 +80,23 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gesture="kb:CONTROL+WINDOWS+ALT+NUMPAD7"
 	)
 	def script_PrevsessioningDevice(self, gesture):
-		self.audioManager.initialize()
-		self.currentSessionIndex = (self.currentSessionIndex + self.sessionCount - 1) \
-		% self.sessionCount
-		name = self.audioManager.getSessionName(self.currentSessionIndex)
-		name = "{}: {}".format(self.currentSessionIndex + 1, name)
-		ui.message(name)
+		self.sessionNavigator.previous()
+		self.audioNavigator = self.sessionNavigator
+
+	@scriptHandler.script(
+		category=CATEGORY_NAME,
+		# Translators: Volume up
+		description=_("Volume up"),
+		gesture="kb:CONTROL+WINDOWS+ALT+NUMPAD8"
+	)
+	def script_volumeUp(self, gesture):
+		self.audioNavigator.volumeUp()
+
+	@scriptHandler.script(
+		category=CATEGORY_NAME,
+		# Translators: Volume down
+		description=_("Volume down"),
+		gesture="kb:CONTROL+WINDOWS+ALT+NUMPAD2"
+	)
+	def script_volumeDown(self, gesture):
+		self.audioNavigator.volumeDown()
