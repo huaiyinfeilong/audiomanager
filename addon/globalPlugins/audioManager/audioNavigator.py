@@ -21,7 +21,10 @@ CONSTANT_UNMUTED = _("Unmuted")
 CONSTANT_AS_DEFAULT_PLAYBACK_DEVICE = _("As default playback device")
 # Translators: As default recording device
 CONSTANT_AS_DEFAULT_RECORDING_DEVICE = _("As default recording device")
-
+# Translators: Default playback device
+CONSTANT_DEFAULT_PLAYBACK_DEVICE = _("Default playback device")
+# Translators: Default recording device
+CONSTANT_DEFAULT_RECORDING_DEVICE = _("Default recording device")
 
 # 音频导航器接口类
 class AudioNavigator(object):
@@ -58,7 +61,14 @@ class PlaybackDeviceNavigator(AudioNavigator):
 		self.current = (self.current + count + 1) % count
 		name = self.audioManager.getPlaybackDeviceName(self.current)
 		volume = self.audioManager.getPlaybackDeviceVolume(self.current)
-		message = f"{self.current + 1}: {name}; {_(CONSTANT_VOLUME)}: {volume}"
+		mute = self.audioManager.getPlaybackDeviceMute(self.current)
+		message = f"{self.current + 1}:"
+		if mute:
+			message = f"{message} {_(CONSTANT_MUTED)},"
+		message = f"{message} {name}; {_(CONSTANT_VOLUME)}: {volume}"
+		default = self.audioManager.GetDefaultPlaybackDevice()
+		if self.current == default:
+			message = f"{message}; {_(CONSTANT_DEFAULT_PLAYBACK_DEVICE)}"
 		ui.message(message)
 		self.audioManager.uninitialize()
 
@@ -69,7 +79,14 @@ class PlaybackDeviceNavigator(AudioNavigator):
 		self.current = (self.current + count - 1) % count
 		name = self.audioManager.getPlaybackDeviceName(self.current)
 		volume = self.audioManager.getPlaybackDeviceVolume(self.current)
-		message = "{}: {}; {}: {}".format((self.current + 1), name, _(CONSTANT_VOLUME), volume)
+		mute = self.audioManager.getPlaybackDeviceMute(self.current)
+		message = f"{self.current + 1}:"
+		if mute:
+			message = f"{message} {_(CONSTANT_MUTED)},"
+		message = f"{message} {name}; {CONSTANT_VOLUME}: {volume}"
+		default = self.audioManager.GetDefaultPlaybackDevice()
+		if self.current == default:
+			message = f"{message}; {_(CONSTANT_DEFAULT_PLAYBACK_DEVICE)}"
 		ui.message(message)
 		self.audioManager.uninitialize()
 
@@ -129,7 +146,14 @@ class RecordingDeviceNavigator(AudioNavigator):
 		self.current = (self.current + count + 1) % count
 		name = self.audioManager.getRecordingDeviceName(self.current)
 		volume = self.audioManager.getRecordingDeviceVolume(self.current)
-		message = "{}: {}; {}: {}".format((self.current + 1), name, _(CONSTANT_VOLUME), volume)
+		mute = self.audioManager.getRecordingDeviceMute(self.current)
+		message = f"{self.current + 1}:"
+		if mute:
+			message = f"{message} {_(CONSTANT_MUTED)},"
+		message = f"{message} {name}; {CONSTANT_VOLUME}: {volume}"
+		default = self.audioManager.GetDefaultRecordingDevice()
+		if self.current == default:
+			message = f"{message}; {_(CONSTANT_DEFAULT_RECORDING_DEVICE)}"
 		ui.message(message)
 		self.audioManager.uninitialize()
 
@@ -139,7 +163,14 @@ class RecordingDeviceNavigator(AudioNavigator):
 		self.current = (self.current + count - 1) % count
 		name = self.audioManager.getRecordingDeviceName(self.current)
 		volume = self.audioManager.getRecordingDeviceVolume(self.current)
-		message = "{}: {}; {}: {}".format((self.current + 1), name, _(CONSTANT_VOLUME), volume)
+		mute = self.audioManager.getRecordingDeviceMute(self.current)
+		message = f"{self.current + 1}:"
+		if mute:
+			message = f"{message} {_(CONSTANT_MUTED)},"
+		message = f"{message} {name}; {CONSTANT_VOLUME}: {volume}"
+		default = self.audioManager.GetDefaultRecordingDevice()
+		if self.current == default:
+			message = f"{message}; {_(CONSTANT_DEFAULT_RECORDING_DEVICE)}"
 		ui.message(message)
 		self.audioManager.uninitialize()
 
@@ -200,7 +231,11 @@ class SessionNavigator(AudioNavigator):
 		self.current = (self.current + count + 1) % count
 		name = self.audioManager.getSessionName(self.current)
 		volume = self.audioManager.getSessionVolume(self.current)
-		message = f"{self.current + 1}: {name}; {_(CONSTANT_VOLUME)}: {volume}"
+		mute = self.audioManager.getSessionMute(self.current)
+		message = f"{self.current + 1}:"
+		if mute:
+			message = f"{message} {_(CONSTANT_MUTED)},"
+		message = f"{message} {name}; {CONSTANT_VOLUME}: {volume}"
 		ui.message(message)
 		self.audioManager.uninitialize()
 
@@ -210,7 +245,11 @@ class SessionNavigator(AudioNavigator):
 		self.current = (self.current + count - 1) % count
 		name = self.audioManager.getSessionName(self.current)
 		volume = self.audioManager.getSessionVolume(self.current)
-		message = f"{self.current + 1}: {name}; {_(CONSTANT_VOLUME)}: {volume}"
+		mute = self.audioManager.getSessionMute(self.current)
+		message = f"{self.current + 1}:"
+		if mute:
+			message = f"{message} {_(CONSTANT_MUTED)},"
+		message = f"{message} {name}; {CONSTANT_VOLUME}: {volume}"
 		ui.message(message)
 		self.audioManager.uninitialize()
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'audioManager' '1.0.0'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-05-08 21:59+0800\n"
-"PO-Revision-Date: 2023-05-08 22:01+0800\n"
+"POT-Creation-Date: 2023-05-09 11:16+0800\n"
+"PO-Revision-Date: 2023-05-09 11:17+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -22,59 +22,59 @@ msgstr ""
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
 #. to be shown on installation and add-on information found in Add-ons Manager.
-#: addon\globalPlugins\audioManager\__init__.py:14 buildVars.py:23
+#: addon\globalPlugins\audioManager\__init__.py:13 buildVars.py:23
 msgid "Audio Manager"
 msgstr "音频管理器"
 
 #. Translators: Next playback device
-#: addon\globalPlugins\audioManager\__init__.py:29
+#: addon\globalPlugins\audioManager\__init__.py:28
 msgid "Next playback device"
 msgstr "下一个播放设备"
 
 #. Translators: Previous playback device
-#: addon\globalPlugins\audioManager\__init__.py:39
+#: addon\globalPlugins\audioManager\__init__.py:38
 msgid "Previous playback device"
 msgstr "上一个播放设备"
 
 #. Translators: Next Recording device
-#: addon\globalPlugins\audioManager\__init__.py:49
+#: addon\globalPlugins\audioManager\__init__.py:48
 msgid "Next Recording device"
 msgstr "下一个录音设备"
 
 #. Translators: Previous Recording device
-#: addon\globalPlugins\audioManager\__init__.py:59
+#: addon\globalPlugins\audioManager\__init__.py:58
 msgid "Previous Recording device"
 msgstr "上一个录音设备"
 
 #. Translators: Next Sessioning device
-#: addon\globalPlugins\audioManager\__init__.py:69
+#: addon\globalPlugins\audioManager\__init__.py:68
 msgid "Next Session"
 msgstr "下一个会话"
 
 #. Translators: Previous Sessioning device
-#: addon\globalPlugins\audioManager\__init__.py:79
+#: addon\globalPlugins\audioManager\__init__.py:78
 msgid "Previous Session"
 msgstr "上一个会话"
 
 #. Translators: Volume up
-#: addon\globalPlugins\audioManager\__init__.py:89
+#: addon\globalPlugins\audioManager\__init__.py:88
 #: addon\globalPlugins\audioManager\audioNavigator.py:13
 msgid "Volume up"
 msgstr "增大音量"
 
 #. Translators: Volume down
-#: addon\globalPlugins\audioManager\__init__.py:98
+#: addon\globalPlugins\audioManager\__init__.py:97
 #: addon\globalPlugins\audioManager\audioNavigator.py:15
 msgid "Volume down"
 msgstr "减小音量"
 
 #. Translators: Mute or unmute the device
-#: addon\globalPlugins\audioManager\__init__.py:107
+#: addon\globalPlugins\audioManager\__init__.py:106
 msgid "Mute or unmute the device"
 msgstr "对设备静音或取消静音"
 
 #. Translators: Set to as default device
-#: addon\globalPlugins\audioManager\__init__.py:116
+#: addon\globalPlugins\audioManager\__init__.py:115
 msgid "Set to as default device"
 msgstr "设为默认设备"
 
@@ -107,6 +107,16 @@ msgstr "作为默认播放设备"
 #: addon\globalPlugins\audioManager\audioNavigator.py:23
 msgid "As default recording device"
 msgstr "作为默认录音设备"
+
+#. Translators: Default playback device
+#: addon\globalPlugins\audioManager\audioNavigator.py:25
+msgid "Default playback device"
+msgstr "默认播放设备"
+
+#. Translators: Default recording device
+#: addon\globalPlugins\audioManager\audioNavigator.py:27
+msgid "Default recording device"
+msgstr "默认录音设备"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
