@@ -5,6 +5,7 @@ import addonHandler
 import scriptHandler
 from .audioManager import AudioManager
 from .audioNavigator import PlaybackDeviceNavigator, RecordingDeviceNavigator, SessionNavigator
+import ui
 
 
 addonHandler.initTranslation()
@@ -117,3 +118,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_asDefault(self, gesture):
 		self.audioNavigator.asDefault()
+
+	@scriptHandler.script(
+		category=CATEGORY_NAME,
+		# Translators: Change the playback device of application
+		description=_("Change the playback device of application"),
+		gesture="kb:CONTROL+WINDOWS+ALT+NUMPADMULTIPLY"
+	)
+	def script_changePlaybackDevice(self, gesture):
+		if isinstance(self.audioNavigator, SessionNavigator):
+			self.audioNavigator.changePlaybackDevice()

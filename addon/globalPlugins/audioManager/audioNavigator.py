@@ -1,6 +1,7 @@
 # coding=utf-8
 
 from .audioManager import AudioManager
+from logHandler import log
 import ui
 import addonHandler
 
@@ -224,11 +225,13 @@ class RecordingDeviceNavigator(AudioNavigator):
 # 会话导航器类
 class SessionNavigator(AudioNavigator):
 	current = 0
+	currentDevice = 0
 
 	def next(self):
 		self.audioManager.initialize()
 		count = self.audioManager.getSessionCount()
 		self.current = (self.current + count + 1) % count
+		self.currentDevice = 0
 		name = self.audioManager.getSessionName(self.current)
 		volume = self.audioManager.getSessionVolume(self.current)
 		mute = self.audioManager.getSessionMute(self.current)
@@ -243,6 +246,7 @@ class SessionNavigator(AudioNavigator):
 		self.audioManager.initialize()
 		count = self.audioManager.getSessionCount()
 		self.current = (self.current + count - 1) % count
+		self.currentDevice = 0
 		name = self.audioManager.getSessionName(self.current)
 		volume = self.audioManager.getSessionVolume(self.current)
 		mute = self.audioManager.getSessionMute(self.current)
@@ -293,3 +297,19 @@ class SessionNavigator(AudioNavigator):
 	def asDefault(self):
 		# 什么也不用做
 		pass
+
+	# 切换会话播放设备
+	def changePlaybackDevice(self):
+		self.audioManager.initialize()
+		sessionCount = self.audioManager.getSessionCount()
+		self.current = (self.current + sessionCount) % sessionCount
+		deviceCount = self.audioManager.getPlaybackDeviceCount()
+		self.currentDevice = (self.currentDevice + deviceCount + 1) % deviceCount
+		log.info(f"会话索引={self.current}, 设备索引={self.currentDevice}")
+		self.audioManager.setSessionPlaybackDevice(self.current, self.currentDevice)
+		self.currentDevice = self.audioManager.GetSessionPlaybackDevice(self.current)
+		log.info(f"设置后当前会话播放设备索引={self.currentDevice}")
+		name = self.audioManager.getPlaybackDeviceName(self.currentDevice)
+		message = name
+		ui.message(message)
+		self.audioManager.uninitialize()

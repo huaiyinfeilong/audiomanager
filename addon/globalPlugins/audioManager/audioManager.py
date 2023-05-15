@@ -17,7 +17,8 @@ class AudioManager(object):
 
 	# 夹在DLL
 	def _loadLibrary(self):
-		dllPath = os.path.join(os.path.dirname(__file__), "LibAudioMgr.dll")
+		os.chdir(os.path.dirname(__file__))
+		dllPath = "LibAudioMgr.dll"
 		self.api = WinDLL(dllPath)
 		# 初始化
 		self.LAM_Initialize = self.api.LAM_Initialize
@@ -98,6 +99,14 @@ class AudioManager(object):
 		self.LAM_GetSessionMute = self.api.LAM_GetSessionMute
 		self.LAM_GetSessionMute.args = (wintypes.DWORD,)
 		self.LAM_GetSessionMute.restype = wintypes.BOOL
+		# 获取会话播放设备
+		self.LAM_GetSessionPlaybackDevice = self.api.LAM_GetSessionPlaybackDevice
+		self.LAM_GetSessionPlaybackDevice.argstype = (wintypes.DWORD,)
+		self.LAM_GetSessionPlaybackDevice.restype = wintypes.DWORD
+		# 设置会话播放设备
+		self.LAM_SetSessionPlaybackDevice = self.api.LAM_SetSessionPlaybackDevice
+		self.LAM_SetSessionPlaybackDevice.argstype = (wintypes.DWORD, wintypes.DWORD)
+
 
 	# 初始化
 	def initialize(self):
@@ -237,3 +246,14 @@ class AudioManager(object):
 		dwIndex = wintypes.DWORD(index)
 		mute = self.LAM_GetSessionMute(dwIndex)
 		return wintypes.BOOL(mute)
+
+	# 获取会话播放设备
+	def GetSessionPlaybackDevice(self, index):
+		dwIndex = wintypes.DWORD(index)
+		return wintypes.DWORD(self.LAM_GetSessionPlaybackDevice(dwIndex)).value
+
+	# 设置会话播放设备
+	def setSessionPlaybackDevice(self, sessionIndex, deviceIndex):
+		dwSessionIndex = wintypes.DWORD(sessionIndex)
+		dwDeviceIndex = wintypes.DWORD(deviceIndex)
+		self.LAM_SetSessionPlaybackDevice(dwSessionIndex, dwDeviceIndex)
