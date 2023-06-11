@@ -1,0 +1,284 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'audioManager' '1.0.0'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2023-06-08 14:03+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.1\n"
+
+#. Translators: Category name
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: addon\globalPlugins\audioManager\__init__.py:16 buildVars.py:23
+msgid "Audio Manager"
+msgstr "音频管理器"
+
+#. Translators: Reset the playback and recording device of all audio applications
+#: addon\globalPlugins\audioManager\__init__.py:54
+msgid "Reset the playback and recording device of all audio applications"
+msgstr "重置所有音频应用程序的播放和录制设备"
+
+#. Translators: Reset the playback volume of all audio applications and unmute them
+#: addon\globalPlugins\audioManager\__init__.py:66
+msgid "Reset the playback volume of all audio applications and unmute them"
+msgstr "重置所有音频应用程序的播放音量并取消静音"
+
+#. Translators: Next playback device
+#: addon\globalPlugins\audioManager\__init__.py:90
+msgid "Next playback device"
+msgstr "下一个播放设备"
+
+#. Translators: Previous playback device
+#: addon\globalPlugins\audioManager\__init__.py:100
+msgid "Previous playback device"
+msgstr "上一个播放设备"
+
+#. Translators: Next Recording device
+#: addon\globalPlugins\audioManager\__init__.py:110
+msgid "Next Recording device"
+msgstr "下一个录音设备"
+
+#. Translators: Previous Recording device
+#: addon\globalPlugins\audioManager\__init__.py:120
+msgid "Previous Recording device"
+msgstr "上一个录音设备"
+
+#. Translators: Next audio application
+#: addon\globalPlugins\audioManager\__init__.py:130
+msgid "Next audio application"
+msgstr "下一个音频应用程序"
+
+#. Translators: Previous audio application
+#: addon\globalPlugins\audioManager\__init__.py:140
+msgid "Previous audio application"
+msgstr "上一个音频应用程序"
+
+#. Translators: Volume up
+#: addon\globalPlugins\audioManager\__init__.py:150
+#: addon\globalPlugins\audioManager\audioNavigator.py:27
+msgid "Volume up"
+msgstr "增大音量"
+
+#. Translators: Volume down
+#: addon\globalPlugins\audioManager\__init__.py:161
+#: addon\globalPlugins\audioManager\audioNavigator.py:29
+msgid "Volume down"
+msgstr "减小音量"
+
+#. Translators: Mute or unmute the playback or the recording devices
+#: addon\globalPlugins\audioManager\__init__.py:172
+msgid "Mute or unmute the playback or the recording devices"
+msgstr "对播放或录制设备静音或取消静音"
+
+#. Translators: Set to as default playback or recording device
+#: addon\globalPlugins\audioManager\__init__.py:181
+msgid "Set to as default playback or recording device"
+msgstr "设置为默认播放或录音设备"
+
+#. Translators: Next the playback device of the audio application
+#: addon\globalPlugins\audioManager\__init__.py:190
+msgid "Next the playback device of the audio application"
+msgstr "音频应用程序的下一个播放设备"
+
+#. Translators: Previous the playback device of the audio application
+#: addon\globalPlugins\audioManager\__init__.py:200
+msgid "Previous the playback device of the audio application"
+msgstr "音频应用程序的上一个播放设备"
+
+#. Translators: Previous the recording device of the audio application
+#: addon\globalPlugins\audioManager\__init__.py:210
+msgid "Previous the recording device of the audio application"
+msgstr "音频应用程序的上一个录音设备"
+
+#. Translators: Next the recording device of the audio application
+#: addon\globalPlugins\audioManager\__init__.py:220
+msgid "Next the recording device of the audio application"
+msgstr "音频应用程序的下一个录音设备"
+
+#. Translators: Click to reset the playback and recording devices of all audio applications; Double click to reset the volume of all audio applications and unmute them
+#: addon\globalPlugins\audioManager\__init__.py:230
+msgid ""
+"Click to reset the playback and recording devices of all audio applications; "
+"Double click to reset the volume of all audio applications and unmute them"
+msgstr ""
+"单击重置所有音频应用的播放和录音设备；双击可重置所有音频应用程序的音量并取消"
+"静音"
+
+#. Translators: Microphone switch
+#: addon\globalPlugins\audioManager\__init__.py:243
+msgid "Microphone switch"
+msgstr "麦克风开关"
+
+#. Translators: The microphone turned off and turned on
+#: addon\globalPlugins\audioManager\__init__.py:255
+msgid "The microphone turned off"
+msgstr "麦克风已关闭"
+
+#: addon\globalPlugins\audioManager\__init__.py:255
+msgid "The microphone turned on"
+msgstr "麦克风已打开"
+
+#. Translators: Soundswitch
+#: addon\globalPlugins\audioManager\__init__.py:262
+msgid "Sound switch"
+msgstr "声音开关"
+
+#. Translators: The sound turned off and turned on
+#: addon\globalPlugins\audioManager\__init__.py:274
+msgid "The sound turned off"
+msgstr "声音已关闭"
+
+#: addon\globalPlugins\audioManager\__init__.py:274
+msgid "The sound turned on"
+msgstr "声音已开启"
+
+#. Translators: Mute or unmute the current window application
+#: addon\globalPlugins\audioManager\__init__.py:281
+msgid "Mute or unmute the current window application"
+msgstr "对当前窗口应用程序静音或取消静音"
+
+#. Translators: The current window is muted or unmuted
+#: addon\globalPlugins\audioManager\__init__.py:292
+msgid "The current window is muted"
+msgstr "当前窗口已静音"
+
+#: addon\globalPlugins\audioManager\__init__.py:292
+msgid "The current window is unmuted."
+msgstr "当前窗口已取消静音。"
+
+#. Translators: Lock microphone volume
+#: addon\globalPlugins\audioManager\__init__.py:299
+msgid "Lock microphone volume"
+msgstr "锁定麦克风音量"
+
+#. translators: Locked or unlocked the microphone volume
+#: addon\globalPlugins\audioManager\__init__.py:307
+msgid "Locked the microphone volume"
+msgstr "已锁定麦克风音量"
+
+#: addon\globalPlugins\audioManager\__init__.py:308
+msgid "Unlocked the microphone volume"
+msgstr "已解锁麦克风音量"
+
+#. Translators: Next NVDA playback device
+#: addon\globalPlugins\audioManager\__init__.py:315
+msgid "Next NVDA playback device"
+msgstr "下一个NVDA播放设备"
+
+#. Translators: Previous NVDA playback device
+#: addon\globalPlugins\audioManager\__init__.py:324
+msgid "Previous NVDA playback device"
+msgstr "上一个NVDA播放设备"
+
+#. Translators: System volume
+#: addon\globalPlugins\audioManager\audioManager.py:13
+msgid "System sound"
+msgstr "系统声音"
+
+#. Translators: Volume field name
+#: addon\globalPlugins\audioManager\audioNavigator.py:25
+msgid "Volume"
+msgstr "音量"
+
+#. Translators: Maxmium volume
+#: addon\globalPlugins\audioManager\audioNavigator.py:31
+msgid "Maximum volume"
+msgstr "最大音量"
+
+#. Translators: Minimual volume
+#: addon\globalPlugins\audioManager\audioNavigator.py:33
+msgid "Minimual volume"
+msgstr "最小音量"
+
+#. Translators: Muted
+#: addon\globalPlugins\audioManager\audioNavigator.py:35
+msgid "Muted"
+msgstr "已静音"
+
+#. Translators: Unmuted
+#: addon\globalPlugins\audioManager\audioNavigator.py:37
+msgid "Unmuted"
+msgstr "已取消静音"
+
+#. Translators: As default playback device
+#: addon\globalPlugins\audioManager\audioNavigator.py:39
+msgid "As default playback device"
+msgstr "作为默认播放设备"
+
+#. Translators: As default recording device
+#: addon\globalPlugins\audioManager\audioNavigator.py:41
+msgid "As default recording device"
+msgstr "作为默认录音设备"
+
+#. Translators: Default playback device
+#: addon\globalPlugins\audioManager\audioNavigator.py:43
+msgid "Default playback device"
+msgstr "默认播放设备"
+
+#. Translators: Default recording device
+#: addon\globalPlugins\audioManager\audioNavigator.py:45
+msgid "Default recording device"
+msgstr "默认录音设备"
+
+#: addon\globalPlugins\audioManager\audioNavigator.py:503
+msgid "Microsoft Sound Mapper"
+msgstr "Microsoft声音映射器"
+
+#. Translators: The message
+#: addon\installTasks.py:27
+msgid ""
+"We have detected a conflict between the 'AudioControl' plugin you have "
+"installed and the plugin you are currently installing. Click 'Yes' to "
+"automatically uninstall and install the conflicting plugin, or click' No 'to "
+"install without uninstalling."
+msgstr ""
+"我们检测到您已安装的“AudioControl”插件与当前正在安装的插件之间存在冲突。单"
+"击“是”自动卸载冲突的插件并安装，或单击“否”不卸载冲突的插件而直接安装。"
+
+#. Translators: The title
+#: addon\installTasks.py:29
+msgid "Warning"
+msgstr "警告"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid "An add-on of NVDA for system audio management."
+msgstr "用于系统音频管理的NVDA附加组件。"
+
+#~ msgid ""
+#~ "Reset the current playback and recording device volume to 50 and unmute"
+#~ msgstr "将当前播放和录音设备音量重置为 50 并取消静音"
+
+#~ msgid "Next NVDA audio output device"
+#~ msgstr "下一个NVDA音频输出设备"
+
+#~ msgid "Previous NVDA audio output device"
+#~ msgstr "上一个NVDA音频输出设备"
+
+#~ msgid "Change the recording device of the audio application"
+#~ msgstr "更改音频应用程序的录音设备"
+
+#~ msgid "Next Session"
+#~ msgstr "下一个会话"
+
+#~ msgid "Previous Session"
+#~ msgstr "上一个会话"
+
+#~ msgid "Set to as default device"
+#~ msgstr "设为默认设备"
+
+#~ msgid "Reset the playback and recording configuration of all application"
+#~ msgstr "重置所有应用程序的播放和录音配置"
