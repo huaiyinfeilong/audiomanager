@@ -151,6 +151,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gestures=["kb(desktop):control+windows+alt+numpad8", "kb(laptop):control+windows+alt+uparrow"]
 	)
 	def script_volumeUp(self, gesture):
+		if self.audioNavigator is None:
+			# Translators: Please select a device or audio application first
+			ui.message(_("Please select a device or audio application first"))
+			return
 		self.audioNavigator.volumeUp()
 		if isinstance(self.audioNavigator, RecordingDeviceNavigator):
 			self.microphoneVolume = self.getMicrophoneVolume()
@@ -162,6 +166,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gestures=["kb(desktop):control+windows+alt+numpad2", "kb(laptop):control+windows+alt+downarrow"]
 	)
 	def script_volumeDown(self, gesture):
+		if self.audioNavigator is None:
+			# Translators: Please select a device or audio application first
+			ui.message(_("Please select a device or audio application first"))
+			return
 		self.audioNavigator.volumeDown()
 		if isinstance(self.audioNavigator, RecordingDeviceNavigator):
 			self.microphoneVolume = self.getMicrophoneVolume()
@@ -173,7 +181,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gestures=["kb(desktop):control+windows+alt+numpad5", "kb(laptop):control+windows+alt+space"]
 	)
 	def script_mute(self, gesture):
-		self.audioNavigator.mute()
+		if self.audioNavigator is not None:
+			self.audioNavigator.mute()
+		else:
+			# Translators: Please select a device or audio application first
+			ui.message(_("Please select a device or audio application first"))
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
@@ -182,7 +194,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gestures=["kb(desktop):control+windows+alt+numpadenter", "kb(laptop):control+windows+alt+enter"]
 	)
 	def script_asDefault(self, gesture):
-		self.audioNavigator.asDefault()
+		if isinstance(self.audioNavigator, PlaybackDeviceNavigator) or isinstance(self.audioNavigator, RecordingDeviceNavigator):
+			self.audioNavigator.asDefault()
+		else:
+			# Translators: Please select a playback or recording device first
+			ui.message(_("Please select a playback or recording device first"))
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
@@ -193,6 +209,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_nextPlaybackDeviceOfApplication(self, gesture):
 		if isinstance(self.audioNavigator, SessionNavigator):
 			self.audioNavigator.nextPlaybackDevice()
+		else:
+			# Translators: Please select an audio application first
+			ui.message(_("Please select an audio application first"))	
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
@@ -203,6 +222,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_previousPlaybackDeviceOfApplication(self, gesture):
 		if isinstance(self.audioNavigator, SessionNavigator):
 			self.audioNavigator.previousPlaybackDevice()
+		else:
+			# Translators: Please select an audio application first
+			ui.message(_("Please select an audio application first"))	
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
@@ -213,6 +235,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_previousRecordingDeviceOfApplication(self, gesture):
 		if isinstance(self.audioNavigator, SessionNavigator):
 			self.audioNavigator.previousRecordingDevice()
+		else:
+			# Translators: Please select an audio application first
+			ui.message(_("Please select an audio application first"))	
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
@@ -223,6 +248,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_nextRecordingDeviceOfApplication(self, gesture):
 		if isinstance(self.audioNavigator, SessionNavigator):
 			self.audioNavigator.nextRecordingDevice()
+		else:
+			# Translators: Please select an audio application first
+			ui.message(_("Please select an audio application first"))	
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,

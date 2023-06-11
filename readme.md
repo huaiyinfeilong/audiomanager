@@ -48,3 +48,10 @@ If you have any opinions or suggestions, please feel free to communicate:
 ## Acknowledgements
 
 Special thanks to Cary-rowen,雪岭冰龙 and 社会主义好 for their help and support during the development of the plugin.
+
+## Upgrade log
+
+### Version 1.0.1
+
+* Fixed some audio applications not showing up.
+* Improved some hints.
