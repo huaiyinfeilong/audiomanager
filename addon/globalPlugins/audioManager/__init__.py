@@ -158,6 +158,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.audioNavigator.volumeUp()
 		if isinstance(self.audioNavigator, RecordingDeviceNavigator):
 			self.microphoneVolume = self.getMicrophoneVolume()
+			if self.lockMicrophoneVolume is True:
+				config.conf["audioManager"]["microphoneVolume"] = self.microphoneVolume
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
@@ -331,6 +333,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# 获取当前麦克风音量
 		self.microphoneVolume = self.getMicrophoneVolume()
 		self.lockMicrophoneVolume = not self.lockMicrophoneVolume
+		if self.lockMicrophoneVolume is True:
+			config.conf["audioManager"]["microphoneVolume"] = self.microphoneVolume
 		# translators: Locked or unlocked the microphone volume
 		message = _("Locked the microphone volume") if self.lockMicrophoneVolume \
 		else _("Unlocked the microphone volume")

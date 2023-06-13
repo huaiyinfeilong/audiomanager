@@ -25,7 +25,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("An add-on of NVDA for system audio management."),
 	# version
-	"addon_version": "1.0.1",
+	"addon_version": "1.0.2",
 	# Author(s)
 	"addon_author": "huaiyinfeilong <huaiyinfeilong@163.com>",
 	# URL for the add-on documentation support

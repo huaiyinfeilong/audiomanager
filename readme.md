@@ -51,6 +51,10 @@ Special thanks to Cary-rowen,雪岭冰龙 and 社会主义好 for their help and
 
 ## Upgrade log
 
+### Version 1.0.2
+
+* Fix the problem that the microphone volume is not remembered after restarting after locking the microphone under certain circumstances.
+
 ### Version 1.0.1
 
 * Fixed some audio applications not showing up.
