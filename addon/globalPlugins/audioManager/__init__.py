@@ -175,6 +175,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.audioNavigator.volumeDown()
 		if isinstance(self.audioNavigator, RecordingDeviceNavigator):
 			self.microphoneVolume = self.getMicrophoneVolume()
+			if self.lockMicrophoneVolume is True:
+				config.conf["audioManager"]["microphoneVolume"] = self.microphoneVolume
 
 	@scriptHandler.script(
 		category=CATEGORY_NAME,
