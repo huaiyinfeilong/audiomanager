@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'audioManager' '1.0.0'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-06-12 09:55+0800\n"
+"POT-Creation-Date: 2023-11-22 14:42+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,112 +21,114 @@ msgstr ""
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
 #. to be shown on installation and add-on information found in Add-ons Manager.
-#: addon\globalPlugins\audioManager\__init__.py:16 buildVars.py:23
+#: addon\globalPlugins\audioManager\__init__.py:18 buildVars.py:23
 msgid "Audio Manager"
 msgstr "音频管理器"
 
 #. Translators: Reset the playback and recording device of all audio applications
-#: addon\globalPlugins\audioManager\__init__.py:54
+#: addon\globalPlugins\audioManager\__init__.py:56
 msgid "Reset the playback and recording device of all audio applications"
 msgstr "重置所有音频应用程序的播放和录制设备"
 
 #. Translators: Reset the playback volume of all audio applications and unmute them
-#: addon\globalPlugins\audioManager\__init__.py:66
+#: addon\globalPlugins\audioManager\__init__.py:68
 msgid "Reset the playback volume of all audio applications and unmute them"
 msgstr "重置所有音频应用程序的播放音量并取消静音"
 
 #. Translators: Next playback device
-#: addon\globalPlugins\audioManager\__init__.py:90
+#: addon\globalPlugins\audioManager\__init__.py:96
 msgid "Next playback device"
 msgstr "下一个播放设备"
 
 #. Translators: Previous playback device
-#: addon\globalPlugins\audioManager\__init__.py:100
+#: addon\globalPlugins\audioManager\__init__.py:106
 msgid "Previous playback device"
 msgstr "上一个播放设备"
 
 #. Translators: Next Recording device
-#: addon\globalPlugins\audioManager\__init__.py:110
+#: addon\globalPlugins\audioManager\__init__.py:116
 msgid "Next Recording device"
 msgstr "下一个录音设备"
 
 #. Translators: Previous Recording device
-#: addon\globalPlugins\audioManager\__init__.py:120
+#: addon\globalPlugins\audioManager\__init__.py:126
 msgid "Previous Recording device"
 msgstr "上一个录音设备"
 
 #. Translators: Next audio application
-#: addon\globalPlugins\audioManager\__init__.py:130
+#: addon\globalPlugins\audioManager\__init__.py:136
 msgid "Next audio application"
 msgstr "下一个音频应用程序"
 
 #. Translators: Previous audio application
-#: addon\globalPlugins\audioManager\__init__.py:140
+#: addon\globalPlugins\audioManager\__init__.py:146
 msgid "Previous audio application"
 msgstr "上一个音频应用程序"
 
 #. Translators: Volume up
-#: addon\globalPlugins\audioManager\__init__.py:150
+#: addon\globalPlugins\audioManager\__init__.py:156
 #: addon\globalPlugins\audioManager\audioNavigator.py:27
 msgid "Volume up"
 msgstr "增大音量"
 
+#. Translators: Please select a device or audio application first
+#: addon\globalPlugins\audioManager\__init__.py:162
+#: addon\globalPlugins\audioManager\__init__.py:179
+#: addon\globalPlugins\audioManager\__init__.py:198
+msgid "Please select a device or audio application first"
+msgstr "请先选择一个设备或音频应用程序"
+
 #. Translators: Volume down
-#: addon\globalPlugins\audioManager\__init__.py:161
+#: addon\globalPlugins\audioManager\__init__.py:173
 #: addon\globalPlugins\audioManager\audioNavigator.py:29
 msgid "Volume down"
 msgstr "减小音量"
 
 #. Translators: Mute or unmute the playback or the recording devices
-#: addon\globalPlugins\audioManager\__init__.py:172
+#: addon\globalPlugins\audioManager\__init__.py:190
 msgid "Mute or unmute the playback or the recording devices"
 msgstr "对播放或录制设备静音或取消静音"
 
-#. Translators: Please select a device or audio application first
-#: addon\globalPlugins\audioManager\__init__.py:180
-msgid "Please select a device or audio application first"
-msgstr "请先选择一个设备或音频应用程序"
-
 #. Translators: Set to as default playback or recording device
-#: addon\globalPlugins\audioManager\__init__.py:185
+#: addon\globalPlugins\audioManager\__init__.py:203
 msgid "Set to as default playback or recording device"
 msgstr "设置为默认播放或录音设备"
 
 #. Translators: Please select a playback or recording device first
-#: addon\globalPlugins\audioManager\__init__.py:193
+#: addon\globalPlugins\audioManager\__init__.py:211
 msgid "Please select a playback or recording device first"
 msgstr "请先选择一个播放或录音设备"
 
 #. Translators: Next the playback device of the audio application
-#: addon\globalPlugins\audioManager\__init__.py:198
+#: addon\globalPlugins\audioManager\__init__.py:216
 msgid "Next the playback device of the audio application"
 msgstr "音频应用程序的下一个播放设备"
 
 #. Translators: Please select an audio application first
-#: addon\globalPlugins\audioManager\__init__.py:206
-#: addon\globalPlugins\audioManager\__init__.py:219
-#: addon\globalPlugins\audioManager\__init__.py:232
-#: addon\globalPlugins\audioManager\__init__.py:245
+#: addon\globalPlugins\audioManager\__init__.py:224
+#: addon\globalPlugins\audioManager\__init__.py:237
+#: addon\globalPlugins\audioManager\__init__.py:250
+#: addon\globalPlugins\audioManager\__init__.py:263
 msgid "Please select an audio application first"
 msgstr "请先选择一个音频应用"
 
 #. Translators: Previous the playback device of the audio application
-#: addon\globalPlugins\audioManager\__init__.py:211
+#: addon\globalPlugins\audioManager\__init__.py:229
 msgid "Previous the playback device of the audio application"
 msgstr "音频应用程序的上一个播放设备"
 
 #. Translators: Previous the recording device of the audio application
-#: addon\globalPlugins\audioManager\__init__.py:224
+#: addon\globalPlugins\audioManager\__init__.py:242
 msgid "Previous the recording device of the audio application"
 msgstr "音频应用程序的上一个录音设备"
 
 #. Translators: Next the recording device of the audio application
-#: addon\globalPlugins\audioManager\__init__.py:237
+#: addon\globalPlugins\audioManager\__init__.py:255
 msgid "Next the recording device of the audio application"
 msgstr "音频应用程序的下一个录音设备"
 
 #. Translators: Click to reset the playback and recording devices of all audio applications; Double click to reset the volume of all audio applications and unmute them
-#: addon\globalPlugins\audioManager\__init__.py:250
+#: addon\globalPlugins\audioManager\__init__.py:268
 msgid ""
 "Click to reset the playback and recording devices of all audio applications; "
 "Double click to reset the volume of all audio applications and unmute them"
@@ -135,68 +137,68 @@ msgstr ""
 "静音"
 
 #. Translators: Microphone switch
-#: addon\globalPlugins\audioManager\__init__.py:263
+#: addon\globalPlugins\audioManager\__init__.py:281
 msgid "Microphone switch"
 msgstr "麦克风开关"
 
 #. Translators: The microphone turned off and turned on
-#: addon\globalPlugins\audioManager\__init__.py:275
+#: addon\globalPlugins\audioManager\__init__.py:293
 msgid "The microphone turned off"
 msgstr "麦克风已关闭"
 
-#: addon\globalPlugins\audioManager\__init__.py:275
+#: addon\globalPlugins\audioManager\__init__.py:293
 msgid "The microphone turned on"
 msgstr "麦克风已打开"
 
 #. Translators: Soundswitch
-#: addon\globalPlugins\audioManager\__init__.py:282
+#: addon\globalPlugins\audioManager\__init__.py:300
 msgid "Sound switch"
 msgstr "声音开关"
 
 #. Translators: The sound turned off and turned on
-#: addon\globalPlugins\audioManager\__init__.py:294
+#: addon\globalPlugins\audioManager\__init__.py:312
 msgid "The sound turned off"
 msgstr "声音已关闭"
 
-#: addon\globalPlugins\audioManager\__init__.py:294
+#: addon\globalPlugins\audioManager\__init__.py:312
 msgid "The sound turned on"
 msgstr "声音已开启"
 
 #. Translators: Mute or unmute the current window application
-#: addon\globalPlugins\audioManager\__init__.py:301
+#: addon\globalPlugins\audioManager\__init__.py:319
 msgid "Mute or unmute the current window application"
 msgstr "对当前窗口应用程序静音或取消静音"
 
 #. Translators: The current window is muted or unmuted
-#: addon\globalPlugins\audioManager\__init__.py:312
+#: addon\globalPlugins\audioManager\__init__.py:330
 msgid "The current window is muted"
 msgstr "当前窗口已静音"
 
-#: addon\globalPlugins\audioManager\__init__.py:312
+#: addon\globalPlugins\audioManager\__init__.py:330
 msgid "The current window is unmuted."
 msgstr "当前窗口已取消静音。"
 
 #. Translators: Lock microphone volume
-#: addon\globalPlugins\audioManager\__init__.py:319
+#: addon\globalPlugins\audioManager\__init__.py:337
 msgid "Lock microphone volume"
 msgstr "锁定麦克风音量"
 
 #. translators: Locked or unlocked the microphone volume
-#: addon\globalPlugins\audioManager\__init__.py:327
+#: addon\globalPlugins\audioManager\__init__.py:347
 msgid "Locked the microphone volume"
 msgstr "已锁定麦克风音量"
 
-#: addon\globalPlugins\audioManager\__init__.py:328
+#: addon\globalPlugins\audioManager\__init__.py:348
 msgid "Unlocked the microphone volume"
 msgstr "已解锁麦克风音量"
 
 #. Translators: Next NVDA playback device
-#: addon\globalPlugins\audioManager\__init__.py:335
+#: addon\globalPlugins\audioManager\__init__.py:355
 msgid "Next NVDA playback device"
 msgstr "下一个NVDA播放设备"
 
 #. Translators: Previous NVDA playback device
-#: addon\globalPlugins\audioManager\__init__.py:344
+#: addon\globalPlugins\audioManager\__init__.py:364
 msgid "Previous NVDA playback device"
 msgstr "上一个NVDA播放设备"
 

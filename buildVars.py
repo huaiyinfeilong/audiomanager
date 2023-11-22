@@ -25,7 +25,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("An add-on of NVDA for system audio management."),
 	# version
-	"addon_version": "1.0.3",
+	"addon_version": "1.0.4",
 	# Author(s)
 	"addon_author": "huaiyinfeilong <huaiyinfeilong@163.com>",
 	# URL for the add-on documentation support
@@ -43,9 +43,9 @@ addon_info = {
 	# Do not change unless you know what you are doing!
 	"addon_updateChannel": None,
 	# Add-on license such as GPL 2
-	"addon_license": None,
+	"addon_license": "Apache 2.0",
 	# URL for the license document the ad-on is licensed under
-	"addon_licenseURL": None,
+	"addon_licenseURL": "http://www.apache.org/licenses/LICENSE-2.0",
 }
 
 # Define the python files that are the sources of your add-on.

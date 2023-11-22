@@ -8,9 +8,11 @@ from .audioNavigator import PlaybackDeviceNavigator, RecordingDeviceNavigator, S
 import ui
 import wx
 import config
+import os
 
 
 addonHandler.initTranslation()
+
 
 # Translators: Category name
 CATEGORY_NAME = _("Audio Manager")
@@ -69,11 +71,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def onTimer(self, event):
 		if not self.lockMicrophoneVolume:
 			return
-		manager = AudioManager()
-		manager.initialize()
-		currentRecordingDevice = manager.GetDefaultRecordingDevice()
-		manager.setRecordingDeviceVolume(currentRecordingDevice, self.microphoneVolume)
-		manager.uninitialize()
+		try:
+			manager = AudioManager()
+			manager.initialize()
+			currentRecordingDevice = manager.GetDefaultRecordingDevice()
+			manager.setRecordingDeviceVolume(currentRecordingDevice, self.microphoneVolume)
+			manager.uninitialize()
+		except:
+			pass
+
 
 	# 获取麦克风音量
 	def getMicrophoneVolume(self):

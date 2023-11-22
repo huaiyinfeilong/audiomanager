@@ -18,7 +18,11 @@ class AudioManager(object):
 
 	# 夹在DLL
 	def _loadLibrary(self):
-		os.chdir(os.path.dirname(__file__))
+		path = os.environ.get('path')
+		currentPath = os.path.dirname(__file__)
+		# 添加当前目录到path环境变量
+		if not currentPath in path.split(os.pathsep):
+			os.environ['path'] = f'{path}{os.pathsep}{currentPath}'
 		dllPath = "LibAudioMgr.dll"
 		self.api = WinDLL(dllPath)
 		# 初始化
