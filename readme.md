@@ -51,6 +51,10 @@ Special thanks to Cary-rowen,雪岭冰龙 and 社会主义好 for their help and
 
 ## Upgrade log
 
+### Version 1.0.5
+
+* For unsupported system versions, a prompt will be provided during plugin installation.
+
 ### Version 1.0.4
 
 * Improve program compatibility and fix incompatibilities with certain software.

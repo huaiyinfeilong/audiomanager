@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'audioManager' '1.0.0'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-11-22 14:42+0800\n"
+"POT-Creation-Date: 2023-11-23 20:40+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -256,21 +256,28 @@ msgstr "默认录音设备"
 msgid "Microsoft Sound Mapper"
 msgstr "Microsoft声音映射器"
 
-#. Translators: The message
-#: addon\installTasks.py:27
+#: addon\installTasks.py:28
 msgid ""
-"We have detected a conflict between the 'AudioControl' plugin you have "
-"installed and the plugin you are currently installing. Click 'Yes' to "
-"automatically uninstall and install the conflicting plugin, or click' No 'to "
+"The system you are using is not supported. This add-on needs to be running "
+"on a Windows 10 or higher system."
+msgstr ""
+"不支持您正在使用的系统。此加载项需要在Windows 10或更高版本的系统上运行。"
+
+#. Translators: The title
+#: addon\installTasks.py:28 addon\installTasks.py:42
+msgid "Warning"
+msgstr "警告"
+
+#. Translators: The message
+#: addon\installTasks.py:40
+msgid ""
+"We have detected a conflict between the 'AudioControl' add-on you have "
+"installed and the add-on you are currently installing. Click 'Yes' to "
+"automatically uninstall and install the conflicting add-on or click' No 'to "
 "install without uninstalling."
 msgstr ""
 "我们检测到您已安装的“AudioControl”插件与当前正在安装的插件之间存在冲突。单"
 "击“是”自动卸载冲突的插件并安装，或单击“否”不卸载冲突的插件而直接安装。"
-
-#. Translators: The title
-#: addon\installTasks.py:29
-msgid "Warning"
-msgstr "警告"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
