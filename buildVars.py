@@ -29,9 +29,9 @@ addon_info = {
 	# Author(s)
 	"addon_author": "huaiyinfeilong <huaiyinfeilong@163.com>",
 	# URL for the add-on documentation support
-	"addon_url": None,
+	"addon_url": "https://github.com/huaiyinfeilong/audiomanager",
 	# URL for the add-on repository where the source code can be found
-	"addon_sourceURL": None,
+	"addon_sourceURL": "https://github.com/huaiyinfeilong/audiomanager",
 	# Documentation file name
 	"addon_docFileName": "readme.html",
 	# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
