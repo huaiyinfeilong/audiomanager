@@ -94,7 +94,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Next playback device
 		description=_("Next playback device"),
-		gestures=["kb(desktop):control+windows+alt+numpad6", "kb(laptop):control+windows+alt+pagedown"]
+		gestures=["kb:control+windows+alt+numpad6", "kb(laptop):control+windows+alt+pagedown"]
 	)
 	def script_nextPlaybackDevice(self, gesture):
 		self.playbackDeviceNavigator.next()
@@ -104,7 +104,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Previous playback device
 		description=_("Previous playback device"),
-		gestures=["kb(desktop):control+windows+alt+numpad4", "kb(laptop):control+windows+alt+pageup"]
+		gestures=["kb:control+windows+alt+numpad4", "kb(laptop):control+windows+alt+pageup"]
 	)
 	def script_PrevPlaybackDevice(self, gesture):
 		self.playbackDeviceNavigator.previous()
@@ -114,7 +114,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Next Recording device
 		description=_("Next Recording device"),
-		gestures=["kb(desktop):control+windows+alt+numpad3", "kb(laptop):control+windows+alt+end"]
+		gestures=["kb:control+windows+alt+numpad3", "kb(laptop):control+windows+alt+end"]
 	)
 	def script_nextrecordingDevice(self, gesture):
 		self.recordingDeviceNavigator.next()
@@ -124,7 +124,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Previous Recording device
 		description=_("Previous Recording device"),
-		gestures=["kb(desktop):control+windows+alt+numpad1","kb(laptop):control+windows+alt+home"]
+		gestures=["kb:control+windows+alt+numpad1","kb(laptop):control+windows+alt+home"]
 	)
 	def script_PrevrecordingDevice(self, gesture):
 		self.recordingDeviceNavigator.previous()
@@ -134,7 +134,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Next audio application
 		description=_("Next audio application"),
-		gestures=["kb(desktop):control+windows+alt+numpad9", "kb(laptop):control+windows+alt+rightarrow"]
+		gestures=["kb:control+windows+alt+numpad9", "kb(laptop):control+windows+alt+rightarrow"]
 	)
 	def script_nextSession(self, gesture):
 		self.sessionNavigator.next()
@@ -144,7 +144,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Previous audio application
 		description=_("Previous audio application"),
-		gestures=["kb(desktop):control+windows+alt+numpad7", "kb(laptop):control+windows+alt+leftarrow"]
+		gestures=["kb:control+windows+alt+numpad7", "kb(laptop):control+windows+alt+leftarrow"]
 	)
 	def script_previousSession(self, gesture):
 		self.sessionNavigator.previous()
@@ -154,7 +154,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Volume up
 		description=_("Volume up"),
-		gestures=["kb(desktop):control+windows+alt+numpad8", "kb(laptop):control+windows+alt+uparrow"]
+		gestures=["kb:control+windows+alt+numpad8", "kb(laptop):control+windows+alt+uparrow"]
 	)
 	def script_volumeUp(self, gesture):
 		if self.audioNavigator is None:
@@ -171,7 +171,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Volume down
 		description=_("Volume down"),
-		gestures=["kb(desktop):control+windows+alt+numpad2", "kb(laptop):control+windows+alt+downarrow"]
+		gestures=["kb:control+windows+alt+numpad2", "kb(laptop):control+windows+alt+downarrow"]
 	)
 	def script_volumeDown(self, gesture):
 		if self.audioNavigator is None:
@@ -188,7 +188,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Mute or unmute the playback or the recording devices
 		description=_("Mute or unmute the playback or the recording devices"),
-		gestures=["kb(desktop):control+windows+alt+numpad5", "kb(laptop):control+windows+alt+space"]
+		gestures=["kb:control+windows+alt+numpad5", "kb(laptop):control+windows+alt+space"]
 	)
 	def script_mute(self, gesture):
 		if self.audioNavigator is not None:
@@ -201,7 +201,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Set to as default playback or recording device
 		description=_("Set to as default playback or recording device"),
-		gestures=["kb(desktop):control+windows+alt+numpadenter", "kb(laptop):control+windows+alt+enter"]
+		gestures=["kb:control+windows+alt+numpadenter", "kb(laptop):control+windows+alt+enter"]
 	)
 	def script_asDefault(self, gesture):
 		if isinstance(self.audioNavigator, PlaybackDeviceNavigator) or isinstance(self.audioNavigator, RecordingDeviceNavigator):
@@ -214,7 +214,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Next the playback device of the audio application
 		description=_("Next the playback device of the audio application"),
-		gestures=["kb(desktop):control+windows+alt+numpadmultiply", "kb(laptop):control+windows+alt+]"]
+		gestures=["kb:control+windows+alt+numpadmultiply", "kb(laptop):control+windows+alt+]"]
 	)
 	def script_nextPlaybackDeviceOfApplication(self, gesture):
 		if isinstance(self.audioNavigator, SessionNavigator):
@@ -227,7 +227,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Previous the playback device of the audio application
 		description=_("Previous the playback device of the audio application"),
-		gestures=["kb(desktop):shift+control+windows+alt+numpadmultiply", "kb(laptop):shift+control+windows+alt+]"]
+		gestures=["kb:shift+control+windows+alt+numpadmultiply", "kb(laptop):shift+control+windows+alt+]"]
 	)
 	def script_previousPlaybackDeviceOfApplication(self, gesture):
 		if isinstance(self.audioNavigator, SessionNavigator):
@@ -240,7 +240,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Previous the recording device of the audio application
 		description=_("Previous the recording device of the audio application"),
-		gestures=["kb(desktop):shift+control+windows+alt+numpaddivide", "kb(laptop):shift+control+windows+alt+["]
+		gestures=["kb:shift+control+windows+alt+numpaddivide", "kb(laptop):shift+control+windows+alt+["]
 	)
 	def script_previousRecordingDeviceOfApplication(self, gesture):
 		if isinstance(self.audioNavigator, SessionNavigator):
@@ -253,7 +253,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Next the recording device of the audio application
 		description=_("Next the recording device of the audio application"),
-		gestures=["kb(desktop):control+windows+alt+numpaddivide", "kb(laptop):control+windows+alt+["]
+		gestures=["kb:control+windows+alt+numpaddivide", "kb(laptop):control+windows+alt+["]
 	)
 	def script_nextRecordingDeviceOfApplication(self, gesture):
 		if isinstance(self.audioNavigator, SessionNavigator):
@@ -266,7 +266,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Click to reset the playback and recording devices of all audio applications; Double click to reset the volume of all audio applications and unmute them
 		description=_("Click to reset the playback and recording devices of all audio applications; Double click to reset the volume of all audio applications and unmute them"),
-		gestures=["kb(desktop):control+windows+alt+numpadminus", "kb(laptop):control+windows+alt+backspace"]
+		gestures=["kb:control+windows+alt+numpadminus", "kb(laptop):control+windows+alt+backspace"]
 	)
 	def script_resetDefault(self, gesture):
 		repeatCount = scriptHandler.getLastScriptRepeatCount()
@@ -279,7 +279,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Microphone switch
 		description=_("Microphone switch"),
-		gestures=["kb(desktop):shift+control+windows+alt+numpad2" ,"kb(laptop):shift+control+windows+alt+downarrow"]
+		gestures=["kb:shift+control+windows+alt+numpad2" ,"kb(laptop):shift+control+windows+alt+downarrow"]
 	)
 	def script_microphoneSwitch(self, gesture):
 		manager = AudioManager()
@@ -298,7 +298,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Soundswitch
 		description=_("Sound switch"),
-		gestures=["kb(desktop):shift+control+windows+alt+numpad5", "kb(laptop):shift+control+windows+alt+uparrow"]
+		gestures=["kb:shift+control+windows+alt+numpad5", "kb(laptop):shift+control+windows+alt+uparrow"]
 	)
 	def script_soundSwitch(self, gesture):
 		manager = AudioManager()
@@ -317,7 +317,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Mute or unmute the current window application
 		description=_("Mute or unmute the current window application"),
-		gestures=["kb(desktop):shift+control+windows+alt+numpad8", "kb(laptop):shift+control+windows+alt+space"]
+		gestures=["kb:shift+control+windows+alt+numpad8", "kb(laptop):shift+control+windows+alt+space"]
 	)
 	def script_muteWindow(self, gesture):
 		manager = AudioManager()
@@ -335,7 +335,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Lock microphone volume
 		description=_("Lock microphone volume"),
-		gestures=["kb(desktop):control+windows+alt+numpaddelete", "kb(laptop):control+windows+alt+delete"]
+		gestures=["kb:control+windows+alt+numpaddelete", "kb(laptop):control+windows+alt+delete"]
 	)
 	def script_lockMicrophoneVolume(self, gesture):
 		# 获取当前麦克风音量
@@ -353,7 +353,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Next NVDA playback device
 		description=_("Next NVDA playback device"),
-		gestures=["kb(desktop):control+windows+alt+numpadplus", "kb(laptop):control+windows+alt+\\"]
+		gestures=["kb:control+windows+alt+numpadplus", "kb(laptop):control+windows+alt+\\"]
 	)
 	def script_nextNVDAOutputDevice(self, gesture):
 		self.nvdaOutputDeviceNavigator.next()
@@ -362,7 +362,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=CATEGORY_NAME,
 		# Translators: Previous NVDA playback device
 		description=_("Previous NVDA playback device"),
-		gestures=["kb(desktop):shift+control+windows+alt+numpadplus", "kb(laptop):shift+control+windows+alt+\\"]
+		gestures=["kb:shift+control+windows+alt+numpadplus", "kb(laptop):shift+control+windows+alt+\\"]
 	)
 	def script_previousNVDAOutputDevice(self, gesture):
 		self.nvdaOutputDeviceNavigator.previous()
