@@ -134,7 +134,7 @@ msgid ""
 "Click to reset the playback and recording devices of all audio applications; "
 "Double click to reset the volume of all audio applications and unmute them"
 msgstr ""
-"點一下重設所有音訊應用程式的播放和錄音裝置；點両下可重設所有音訊應用程式的音"
+"按一下重設所有音訊應用程式的播放和錄音裝置；按両下可重設所有音訊應用程式的音"
 "量並取消靜音"
 
 #. Translators: Microphone switch
