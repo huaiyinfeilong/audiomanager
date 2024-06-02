@@ -29,7 +29,7 @@
 | 音訊應用程式的下一個錄音裝置                                                                     | control+windows+alt+數字鍵盤除號       | control+windows+alt+[            |
 | 音訊應用程式的上一個播放裝置                                                                     | shift+control+windows+alt+數字鍵盤乘號 | shift+control+windows+alt+]      |
 | 音訊應用程式的下一個播放裝置                                                                     | control+windows+alt+數字鍵盤乘號       | control+windows+alt+]            |
-| 恢復音訊應用程式參數（按一下重設所有音訊應用程式的播放和錄音裝置、按兩下重設所有音訊應用程式音量並解除靜音） | control+windows+alt+數字鍵盤減號       | control+windows+alt+backspace         |
+| 恢復音訊應用程式參數（按一下重設所有音訊應用程式的播放和錄音裝置，按兩下重設所有音訊應用程式音量並解除靜音） | control+windows+alt+數字鍵盤減號       | control+windows+alt+backspace         |
 | 上一個 NVDA 播放裝置                                                                         | shift+control+windows+alt+數字鍵盤加號 | shift+control+windows+alt+\      |
 | 下一個 NVDA 播放裝置                                                                         | control+windows+alt+數字鍵盤加號       | control+windows+alt+\            |
 | 靜音/解除靜音目前視窗                                                                        | shift+control+windows+alt+數字鍵盤 8   | shift+control+windows+alt+space   |
