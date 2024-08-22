@@ -1,0 +1,287 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2024-04-03 20:41+0300\n"
+"PO-Revision-Date: 2024-07-15 17:23+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Bookmarks: -1,28,-1,-1,-1,-1,-1,-1,-1,-1\n"
+
+#. Translators: Category name
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: addon\globalPlugins\audioManager\__init__.py:18 buildVars.py:23
+msgid "Audio Manager"
+msgstr "Ses Yöneticisi"
+
+#. Translators: Reset the playback and recording device of all audio applications
+#: addon\globalPlugins\audioManager\__init__.py:56
+msgid "Reset the playback and recording device of all audio applications"
+msgstr "Tüm ses uygulamalarının oynatma ve kayıt cihazını sıfırla"
+
+#. Translators: Reset the playback volume of all audio applications and unmute them
+#: addon\globalPlugins\audioManager\__init__.py:68
+msgid "Reset the playback volume of all audio applications and unmute them"
+msgstr "Tüm ses uygulamalarının oynatma sesini sıfırla ve sesini aç"
+
+#. Translators: Next playback device
+#: addon\globalPlugins\audioManager\__init__.py:96
+msgid "Next playback device"
+msgstr "Sonraki oynatma cihazı"
+
+#. Translators: Previous playback device
+#: addon\globalPlugins\audioManager\__init__.py:106
+msgid "Previous playback device"
+msgstr "Önceki oynatma cihazı"
+
+#. Translators: Next Recording device
+#: addon\globalPlugins\audioManager\__init__.py:116
+msgid "Next Recording device"
+msgstr "Sonraki Kayıt cihazı"
+
+#. Translators: Previous Recording device
+#: addon\globalPlugins\audioManager\__init__.py:126
+msgid "Previous Recording device"
+msgstr "Önceki Kayıt cihazı"
+
+#. Translators: Next audio application
+#: addon\globalPlugins\audioManager\__init__.py:136
+msgid "Next audio application"
+msgstr "Sonraki ses uygulaması"
+
+#. Translators: Previous audio application
+#: addon\globalPlugins\audioManager\__init__.py:146
+msgid "Previous audio application"
+msgstr "Önceki ses uygulaması"
+
+#. Translators: Volume up
+#: addon\globalPlugins\audioManager\__init__.py:156
+#: addon\globalPlugins\audioManager\audioNavigator.py:27
+msgid "Volume up"
+msgstr "Sesi artır"
+
+#. Translators: Please select a device or audio application first
+#: addon\globalPlugins\audioManager\__init__.py:162
+#: addon\globalPlugins\audioManager\__init__.py:179
+#: addon\globalPlugins\audioManager\__init__.py:198
+msgid "Please select a device or audio application first"
+msgstr "Lütfen önce bir cihaz veya ses uygulaması seçin"
+
+#. Translators: Volume down
+#: addon\globalPlugins\audioManager\__init__.py:173
+#: addon\globalPlugins\audioManager\audioNavigator.py:29
+msgid "Volume down"
+msgstr "Sesi azalt"
+
+#. Translators: Mute or unmute the playback or the recording devices
+#: addon\globalPlugins\audioManager\__init__.py:190
+msgid "Mute or unmute the playback or the recording devices"
+msgstr "Oynatma veya kayıt cihazlarının sesini kapat veya aç"
+
+#. Translators: Set to as default playback or recording device
+#: addon\globalPlugins\audioManager\__init__.py:203
+msgid "Set to as default playback or recording device"
+msgstr "Varsayılan oynatma veya kayıt cihazı olarak ayarla"
+
+#. Translators: Please select a playback or recording device first
+#: addon\globalPlugins\audioManager\__init__.py:211
+msgid "Please select a playback or recording device first"
+msgstr "Lütfen önce bir oynatma veya kayıt cihazı seçin"
+
+#. Translators: Next the playback device of the audio application
+#: addon\globalPlugins\audioManager\__init__.py:216
+msgid "Next the playback device of the audio application"
+msgstr "Ses uygulaması için sonraki oynatma cihazı"
+
+#. Translators: Please select an audio application first
+#: addon\globalPlugins\audioManager\__init__.py:224
+#: addon\globalPlugins\audioManager\__init__.py:237
+#: addon\globalPlugins\audioManager\__init__.py:250
+#: addon\globalPlugins\audioManager\__init__.py:263
+msgid "Please select an audio application first"
+msgstr "Lütfen önce bir ses uygulaması seçin"
+
+#. Translators: Previous the playback device of the audio application
+#: addon\globalPlugins\audioManager\__init__.py:229
+msgid "Previous the playback device of the audio application"
+msgstr "Ses uygulaması için önceki oynatma cihazı"
+
+#. Translators: Previous the recording device of the audio application
+#: addon\globalPlugins\audioManager\__init__.py:242
+msgid "Previous the recording device of the audio application"
+msgstr "Ses uygulaması için önceki kayıt cihazı"
+
+#. Translators: Next the recording device of the audio application
+#: addon\globalPlugins\audioManager\__init__.py:255
+msgid "Next the recording device of the audio application"
+msgstr "Ses uygulaması için sonraki kayıt cihazı"
+
+#. Translators: Click to reset the playback and recording devices of all audio applications; Double click to reset the volume of all audio applications and unmute them
+#: addon\globalPlugins\audioManager\__init__.py:268
+msgid ""
+"Click to reset the playback and recording devices of all audio applications; "
+"Double click to reset the volume of all audio applications and unmute them"
+msgstr ""
+"Tüm ses uygulamalarının oynatma ve kayıt cihazlarını sıfırlamak için tıkla; "
+"Tüm ses uygulamalarının sesini sıfırlamak ve sesini açmak için çift tıkla"
+
+#. Translators: Microphone switch
+#: addon\globalPlugins\audioManager\__init__.py:281
+msgid "Microphone switch"
+msgstr "Mikrofon anahtarı"
+
+#. Translators: The microphone turned off and turned on
+#: addon\globalPlugins\audioManager\__init__.py:293
+msgid "The microphone turned off"
+msgstr "Mikrofon kapalı"
+
+#: addon\globalPlugins\audioManager\__init__.py:293
+msgid "The microphone turned on"
+msgstr "Mikrofon açık"
+
+#. Translators: Soundswitch
+#: addon\globalPlugins\audioManager\__init__.py:300
+msgid "Sound switch"
+msgstr "Ses anahtarı"
+
+#. Translators: The sound turned off and turned on
+#: addon\globalPlugins\audioManager\__init__.py:312
+msgid "The sound turned off"
+msgstr "Ses kapalı"
+
+#: addon\globalPlugins\audioManager\__init__.py:312
+msgid "The sound turned on"
+msgstr "Ses açık"
+
+#. Translators: Mute or unmute the current window application
+#: addon\globalPlugins\audioManager\__init__.py:319
+msgid "Mute or unmute the current window application"
+msgstr "Geçerli pencere uygulamasının sesini kapat veya aç"
+
+#. Translators: The current window is muted or unmuted
+#: addon\globalPlugins\audioManager\__init__.py:330
+msgid "The current window is muted"
+msgstr "Geçerli pencerenin sesi kapalı"
+
+#: addon\globalPlugins\audioManager\__init__.py:330
+msgid "The current window is unmuted."
+msgstr "Geçerli pencerenin sesi açık."
+
+#. Translators: Lock microphone volume
+#: addon\globalPlugins\audioManager\__init__.py:337
+msgid "Lock microphone volume"
+msgstr "Mikrofon ses seviyesini kilitle"
+
+#. translators: Locked or unlocked the microphone volume
+#: addon\globalPlugins\audioManager\__init__.py:347
+msgid "Locked the microphone volume"
+msgstr "Mikrofon ses seviyesi kilitlendi"
+
+#: addon\globalPlugins\audioManager\__init__.py:348
+msgid "Unlocked the microphone volume"
+msgstr "Mikrofon ses seviyesinin kilidi açıldı"
+
+#. Translators: Next NVDA playback device
+#: addon\globalPlugins\audioManager\__init__.py:355
+msgid "Next NVDA playback device"
+msgstr "Sonraki NVDA oynatma cihazı"
+
+#. Translators: Previous NVDA playback device
+#: addon\globalPlugins\audioManager\__init__.py:364
+msgid "Previous NVDA playback device"
+msgstr "Önceki NVDA oynatma cihazı"
+
+#. Translators: System volume
+#: addon\globalPlugins\audioManager\audioManager.py:13
+msgid "System sound"
+msgstr "Sistem sesi"
+
+#. Translators: Volume field name
+#: addon\globalPlugins\audioManager\audioNavigator.py:25
+msgid "Volume"
+msgstr "Ses seviyesi"
+
+#. Translators: Maxmium volume
+#: addon\globalPlugins\audioManager\audioNavigator.py:31
+msgid "Maximum volume"
+msgstr "Maksimum ses seviyesi"
+
+#. Translators: Minimual volume
+#: addon\globalPlugins\audioManager\audioNavigator.py:33
+msgid "Minimual volume"
+msgstr "Minimum ses seviyesi"
+
+#. Translators: Muted
+#: addon\globalPlugins\audioManager\audioNavigator.py:35
+msgid "Muted"
+msgstr "Ses kapalı"
+
+#. Translators: Unmuted
+#: addon\globalPlugins\audioManager\audioNavigator.py:37
+msgid "Unmuted"
+msgstr "Ses açık"
+
+#. Translators: As default playback device
+#: addon\globalPlugins\audioManager\audioNavigator.py:39
+msgid "As default playback device"
+msgstr "Varsayılan oynatma cihazı olarak ayarlandı"
+
+#. Translators: As default recording device
+#: addon\globalPlugins\audioManager\audioNavigator.py:41
+msgid "As default recording device"
+msgstr "Varsayılan kayıt cihazı olarak ayarlandı"
+
+#. Translators: Default playback device
+#: addon\globalPlugins\audioManager\audioNavigator.py:43
+msgid "Default playback device"
+msgstr "Varsayılan oynatma cihazı"
+
+#. Translators: Default recording device
+#: addon\globalPlugins\audioManager\audioNavigator.py:45
+msgid "Default recording device"
+msgstr "Varsayılan kayıt cihazı"
+
+#: addon\globalPlugins\audioManager\audioNavigator.py:503
+msgid "Microsoft Sound Mapper"
+msgstr "Microsoft Ses Eşleştiricisi"
+
+#. Translators: The system you are using is not supported. This add-on needs to be running on a Windows 10 or higher system.
+#: addon\installTasks.py:29
+msgid ""
+"The system you are using is not supported. This add-on needs to be running "
+"on a Windows 10 or higher system."
+msgstr ""
+"Kullandığınız işletim sistemi desteklenmiyor. Bu eklenti, çalışmak için bir "
+"Windows 10 veya daha yüksek işletim sistemine ihtiyaç duyar."
+
+#. Translators: The title
+#: addon\installTasks.py:29 addon\installTasks.py:42
+msgid "Warning"
+msgstr "Uyarı"
+
+#. Translators: The message
+#: addon\installTasks.py:40
+msgid ""
+"We have detected a conflict between the 'AudioControl' add-on you have "
+"installed and the add-on you are currently installing. Click 'Yes' to "
+"automatically uninstall and install the conflicting add-on or click' No 'to "
+"install without uninstalling."
+msgstr ""
+"Yüklediğiniz 'AudioControl' eklentisi ile şu anda yüklemekte olduğunuz "
+"eklenti arasında bir çakışma tespit ettik. Çakışan eklentiyi otomatik olarak "
+"kaldırıp yüklemek için 'Evet'i veya kaldırmadan yüklemek için 'Hayır'ı "
+"tıklayın."
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid "An add-on of NVDA for system audio management."
+msgstr "Sistem ses yönetimi için bir NVDA eklentisi."
