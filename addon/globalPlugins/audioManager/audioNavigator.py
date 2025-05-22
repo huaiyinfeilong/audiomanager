@@ -1,13 +1,15 @@
 # coding=utf-8
 
-from .audioManager import AudioManager
-import ui
 import addonHandler
+import config
 import nvwave
 import os
-import config
-from synthDriverHandler import getSynth, setSynth
 import tones
+import synthDriverHandler
+import ui
+import versionInfo
+from logHandler import log
+from .audioManager import AudioManager
 
 def playSoundOut(directionLeft=True):
 	wavePath = os.path.dirname(__file__)
@@ -17,9 +19,13 @@ def playSoundOut(directionLeft=True):
 	wavePathFilename = os.path.join(wavePath, "sound", waveFilename)
 	nvwave.playWaveFile(wavePathFilename)
 
+# Define the target version where the new API was introduced
+TARGET_API_VERSION = (2025, 1)
+CURRENT_API_VERSION = (versionInfo.version_year, versionInfo.version_major)
+IS_NVDA_2025_1_OR_LATER = CURRENT_API_VERSION >= TARGET_API_VERSION
+log.info(f"Current NVDA API version: {CURRENT_API_VERSION}. Target for new API: {TARGET_API_VERSION}. Using new API: {IS_NVDA_2025_1_OR_LATER}")
 
 addonHandler.initTranslation()
-
 
 # Translators: Volume field name
 CONSTANT_VOLUME = _("Volume")
@@ -490,21 +496,18 @@ class SessionNavigator(AudioNavigator):
 		self.audioManager.uninitialize()
 
 
-# NVDA输出设备导航器类
-class NVDAOutputDeviceNavigator(object):
-	current = 0
+class _Legacy_NVDAOutputDeviceNavigator(object):
 
-	# 获取当前所有可用输出设备
 	def _getOutputDevices(self):
-		# Note: code mainly taken from NVDA gui/settingsDialogs.py (class SynthesizerSelectionDialog)
+		"""Get all currently available output devices"""
 		deviceNames = nvwave.getOutputDeviceNames()
 		# #11349: On Windows 10 20H1 and 20H2, Microsoft Sound Mapper returns an empty string.
 		if deviceNames[0] in ("", "Microsoft Sound Mapper"):
 			deviceNames[0] = _("Microsoft Sound Mapper")
 		return deviceNames
 
-	# 获取NVDA当前使用的输出设备
 	def _getCurrentOutputDevice(self):
+		"""Get the output device currently used by NVDA"""
 		index = 0
 		try:
 			index = self._getOutputDevices().index(config.conf["speech"]["outputDevice"])
@@ -512,17 +515,17 @@ class NVDAOutputDeviceNavigator(object):
 			pass
 		return index
 
-	# 设置输出设备
 	def _setOutputDevice(self, device):
+		"""Set the output device"""
 		if not device:
 			return
 		config.conf["speech"]["outputDevice"] = device
 		tones.terminate()
-		setSynth(getSynth().name)
+		synthDriverHandler.setSynth(synthDriverHandler.getSynth().name)
 		tones.initialize()
 
-	# 下一个输出设备
 	def next(self):
+		"""Next output device"""
 		devices = self._getOutputDevices()
 		count = len(devices)
 		current = self._getCurrentOutputDevice()
@@ -531,8 +534,8 @@ class NVDAOutputDeviceNavigator(object):
 		self._setOutputDevice(device)
 		ui.message(device)
 
-	# 上一个输出设备
 	def previous(self):
+		"""Previous output device"""
 		devices = self._getOutputDevices()
 		count = len(devices)
 		current = self._getCurrentOutputDevice()
@@ -540,3 +543,107 @@ class NVDAOutputDeviceNavigator(object):
 		device = devices[current]
 		self._setOutputDevice(device)
 		ui.message(device)
+
+
+class _MMDevice_NVDAOutputDeviceNavigator:
+
+	def __init__(self, mmdevice_module):
+		if not mmdevice_module:
+			 raise ValueError("MMDevice Navigator requires a valid mmdevice module instance.")
+		self.mmdevice = mmdevice_module
+		self._devices_cache: list[tuple[str, str]] | None = None
+		self._current_index: int = -1
+
+	def _get_output_devices(self) -> list[tuple[str, str]]:
+		"""Fetches audio devices using mmdevice, includes 'Default'."""
+		try:
+			devices_list = []
+			for dev in self.mmdevice.getOutputDevices(includeDefault=True):
+				try:
+					dev_id = getattr(dev, 'id', dev[0])
+					dev_name = getattr(dev, 'name', dev[1])
+					devices_list.append((dev_id, dev_name))
+				except (AttributeError, IndexError, TypeError):
+					log.warning("Skipping unparsable audio device item.", exc_info=True)
+					continue
+			return devices_list
+		except Exception:
+			 log.exception("Failed to enumerate mmdevices")
+			 return []
+
+	def _update_cache_and_index(self):
+		"""Refreshes cache and updates current index from config."""
+		self._devices_cache = self._get_output_devices()
+		if not self._devices_cache:
+			self._current_index = -1
+			return
+		current_index = 0 # Default to index 0 ('Default')
+		current_identifier = config.conf["audio"]["outputDevice"]
+		if current_identifier != 'default':
+			# Find index for non-default identifier
+			# Use list comprehension and next with fallback, similar idea to index()
+			current_index = next(
+				(i for i, (dev_id, _) in enumerate(self._devices_cache)
+				if dev_id == current_identifier),
+				0 # Fallback to 0 if not found
+			)
+		self._current_index = current_index
+
+	def _set_output_device(self, target_index: int):
+		"""Sets the chosen audio device and reloads the synthesizer."""
+		if not self._devices_cache or not (0 <= target_index < len(self._devices_cache)):
+			return
+		identifier, _ = self._devices_cache[target_index]
+		config_value = 'default' if target_index == 0 else identifier
+		# Only proceed if the value actually changes
+		if config.conf["audio"]["outputDevice"] == config_value:
+			return
+		config.conf["audio"]["outputDevice"] = config_value
+		currentSynth = synthDriverHandler.getSynth()
+		synthDriverHandler.setSynth(currentSynth.name)
+		tones.terminate()
+		tones.initialize()
+
+	def _navigate(self, step: int):
+		"""Handles the core navigation logic."""
+		self._update_cache_and_index()
+		if not self._devices_cache:
+			ui.message(_("No audio output devices available"))
+			return
+		count = len(self._devices_cache)
+		# Default to 0 if index is invalid (-1 from failed update)
+		current_index = self._current_index if self._current_index >= 0 else 0
+		next_index = (current_index + step + count) % count
+		self._set_output_device(next_index)
+		self._current_index = next_index # Update index
+		ui.message(self._devices_cache[next_index][1])
+
+	def next(self):
+		self._navigate(1)
+
+	def previous(self):
+		self._navigate(-1)
+
+
+class NVDAOutputDeviceNavigator(object):
+	"""
+	Adaptive navigator for NVDA's audio output device.
+	Automatically uses the correct API (nvwave or mmdevice) based on the
+	running NVDA version. Provides 'next()' and 'previous()' methods.
+	"""
+
+	def __init__(self):
+		self._impl = None
+		if IS_NVDA_2025_1_OR_LATER:
+			log.info("NVDA 2025.1+ detected. Initializing MMDevice-based navigator.")
+			from utils import mmdevice
+			self._impl = _MMDevice_NVDAOutputDeviceNavigator(mmdevice)
+		else:
+			log.info("Older NVDA version detected. Initializing Legacy (nvwave-based) navigator.")
+			self._impl = _Legacy_NVDAOutputDeviceNavigator()
+
+	def next(self):
+		self._impl.next()
+
+	def previous(self):
+		self._impl.previous()
