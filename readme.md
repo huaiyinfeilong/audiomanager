@@ -50,6 +50,9 @@ If you have any opinions or suggestions, please feel free to communicate:
 Special thanks to Cary-rowen,雪岭冰龙 and 社会主义好 for their help and support during the development of the plugin.
 
 ## Upgrade log
+### Version 1.0.8
+- Compatible with NVDA2025.1
+- L10n Updates.
 
 ### Version 1.0.7
 
