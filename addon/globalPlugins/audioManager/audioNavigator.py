@@ -7,10 +7,13 @@ import os
 import tones
 import synthDriverHandler
 import ui
-import versionInfo
 from logHandler import log
 from .audioManager import AudioManager
 
+try:
+	from buildVersion import version_year, version_major
+except ImportError:
+	from versionInfo import version_year, version_major
 def playSoundOut(directionLeft=True):
 	wavePath = os.path.dirname(__file__)
 	waveFilename = "left.wav" if directionLeft else "right.wav"
@@ -18,10 +21,9 @@ def playSoundOut(directionLeft=True):
 		return
 	wavePathFilename = os.path.join(wavePath, "sound", waveFilename)
 	nvwave.playWaveFile(wavePathFilename)
-
 # Define the target version where the new API was introduced
 TARGET_API_VERSION = (2025, 1)
-CURRENT_API_VERSION = (versionInfo.version_year, versionInfo.version_major)
+CURRENT_API_VERSION = (version_year, version_major)
 IS_NVDA_2025_1_OR_LATER = CURRENT_API_VERSION >= TARGET_API_VERSION
 log.info(f"Current NVDA API version: {CURRENT_API_VERSION}. Target for new API: {TARGET_API_VERSION}. Using new API: {IS_NVDA_2025_1_OR_LATER}")
 
