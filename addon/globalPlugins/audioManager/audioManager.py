@@ -2,6 +2,7 @@
 
 from ctypes import WinDLL, wintypes, create_unicode_buffer
 import os
+import sys
 from logHandler import log
 import addonHandler
 import api
@@ -20,10 +21,24 @@ class AudioManager(object):
 	def _loadLibrary(self):
 		path = os.environ.get('PATH')
 		currentPath = os.path.dirname(__file__)
+		is64bit = sys.maxsize > 2**32
+		if is64bit:
+			dllDir = os.path.join(currentPath, 'x64')
+			log.info("AudioManager: 64-bit process detected; using x64 DLL directory.")
+		else:
+			dllDir = currentPath
 		# 添加当前目录到path环境变量
-		if currentPath not in path.split(os.pathsep):
-			os.environ['PATH'] = os.pathsep.join([path, currentPath])
-		dllPath = os.path.join(currentPath, "LibAudioMgr.dll")
+		if dllDir not in path.split(os.pathsep):
+			os.environ['PATH'] = os.pathsep.join([path, dllDir])
+		dllPath = os.path.join(dllDir, "LibAudioMgr.dll")
+		if not os.path.exists(dllPath):
+			if is64bit:
+				raise RuntimeError(
+					"LibAudioMgr.dll (64-bit) not found in the x64/ directory. "
+					"NVDA 2026.1+ requires a 64-bit build of LibAudioMgr.dll. "
+					"Please contact the add-on author for a 64-bit release."
+				)
+			raise RuntimeError(f"LibAudioMgr.dll not found at: {dllPath}")
 		self.api = WinDLL(dllPath)
 		# 初始化
 		self.LAM_Initialize = self.api.LAM_Initialize

@@ -7,7 +7,7 @@ import os
 import tones
 import synthDriverHandler
 import ui
-import versionInfo
+import buildVersion
 from logHandler import log
 from .audioManager import AudioManager
 
@@ -21,7 +21,7 @@ def playSoundOut(directionLeft=True):
 
 # Define the target version where the new API was introduced
 TARGET_API_VERSION = (2025, 1)
-CURRENT_API_VERSION = (versionInfo.version_year, versionInfo.version_major)
+CURRENT_API_VERSION = (buildVersion.version_year, buildVersion.version_major)
 IS_NVDA_2025_1_OR_LATER = CURRENT_API_VERSION >= TARGET_API_VERSION
 log.info(f"Current NVDA API version: {CURRENT_API_VERSION}. Target for new API: {TARGET_API_VERSION}. Using new API: {IS_NVDA_2025_1_OR_LATER}")
 
@@ -561,7 +561,7 @@ class _MMDevice_NVDAOutputDeviceNavigator:
 			for dev in self.mmdevice.getOutputDevices(includeDefault=True):
 				try:
 					dev_id = getattr(dev, 'id', dev[0])
-					dev_name = getattr(dev, 'name', dev[1])
+					dev_name = getattr(dev, 'friendlyName', dev[1])
 					devices_list.append((dev_id, dev_name))
 				except (AttributeError, IndexError, TypeError):
 					log.warning("Skipping unparsable audio device item.", exc_info=True)
