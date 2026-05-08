@@ -128,8 +128,9 @@ class PlaybackDeviceNavigator(AudioNavigator):
 	# 增加播放设备音量
 	def volumeUp(self):
 		self.audioManager.initialize()
+		step = config.conf["audioManager"]["volumeStep"]
 		volume = self.audioManager.getPlaybackDeviceVolume(self.current)
-		volume += 1
+		volume += step
 		volume = 100 if volume > 100 else volume
 		name = self.audioManager.getPlaybackDeviceName(self.current)
 		self.audioManager.setPlaybackDeviceVolume(self.current, volume)
@@ -147,8 +148,9 @@ class PlaybackDeviceNavigator(AudioNavigator):
 	# 减少播放设备音量
 	def volumeDown(self):
 		self.audioManager.initialize()
+		step = config.conf["audioManager"]["volumeStep"]
 		volume = self.audioManager.getPlaybackDeviceVolume(self.current)
-		volume -= 1
+		volume -= step
 		volume = 0 if volume < 0 else volume
 		name = self.audioManager.getPlaybackDeviceName(self.current)
 		self.audioManager.setPlaybackDeviceVolume(self.current, volume)
@@ -236,8 +238,9 @@ class RecordingDeviceNavigator(AudioNavigator):
 	# 增加录音设备音量
 	def volumeUp(self):
 		self.audioManager.initialize()
+		step = config.conf["audioManager"]["volumeStep"]
 		volume = self.audioManager.getRecordingDeviceVolume(self.current)
-		volume += 1
+		volume += step
 		volume = 100 if volume > 100 else volume
 		name = self.audioManager.getRecordingDeviceName(self.current)
 		self.audioManager.setRecordingDeviceVolume(self.current, volume)
@@ -255,8 +258,9 @@ class RecordingDeviceNavigator(AudioNavigator):
 	# 减少录音设备音量
 	def volumeDown(self):
 		self.audioManager.initialize()
+		step = config.conf["audioManager"]["volumeStep"]
 		volume = self.audioManager.getRecordingDeviceVolume(self.current)
-		volume -= 1
+		volume -= step
 		volume = 0 if volume < 0 else volume
 		name = self.audioManager.getRecordingDeviceName(self.current)
 		self.audioManager.setRecordingDeviceVolume(self.current, volume)
@@ -341,8 +345,9 @@ class SessionNavigator(AudioNavigator):
 	# 增加会话音量
 	def volumeUp(self):
 		self.audioManager.initialize()
+		step = config.conf["audioManager"]["volumeStep"]
 		volume = self.audioManager.getSessionVolume(self.current)
-		volume += 1
+		volume += step
 		volume = 100 if volume > 100 else volume
 		name = self.audioManager.getSessionName(self.current)
 		self.audioManager.setSessionVolume(self.current, volume)
@@ -360,8 +365,9 @@ class SessionNavigator(AudioNavigator):
 	# 减少会话音量
 	def volumeDown(self):
 		self.audioManager.initialize()
+		step = config.conf["audioManager"]["volumeStep"]
 		volume = self.audioManager.getSessionVolume(self.current)
-		volume -= 1
+		volume -= step
 		volume = 0 if volume < 0 else volume
 		name = self.audioManager.getSessionName(self.current)
 		self.audioManager.setSessionVolume(self.current, volume)
