@@ -9,6 +9,9 @@ import ui
 import wx
 import config
 import os
+import gui
+from gui import NVDASettingsDialog
+from .gui import AudioManagerSettingsPanel
 
 
 addonHandler.initTranslation()
@@ -24,7 +27,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
 		confspec = {
 			"lockMicrophoneVolume": "boolean(default=False)",
-			"microphoneVolume": "integer(default=50)"
+			"microphoneVolume": "integer(default=50)",
+			"volumeStep": "integer(default=5, min=1, max=20)"
 		}
 		config.conf.spec["audioManager"] = confspec
 		self.audioNavigator = None
@@ -39,12 +43,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.timer.Bind(wx.EVT_TIMER, self.onTimer)
 		self.timer.Start(100)
 		self.nvdaOutputDeviceNavigator = NVDAOutputDeviceNavigator()
+		# Register settings panel
+		NVDASettingsDialog.categoryClasses.append(AudioManagerSettingsPanel)
 
 	# 插件退出执行代码
 	def terminate(self):
 		# 如果开启了麦克风锁定，退出时保存麦克风音量，用以下次启动时作为麦克风默认音量
 		if self.lockMicrophoneVolume:
 			config.conf["audioManager"]["microphoneVolume"] = self.microphoneVolume
+		# Unregister settings panel
+		try:
+			NVDASettingsDialog.categoryClasses.remove(AudioManagerSettingsPanel)
+		except RuntimeError:
+			pass
 
 	# Reset the playback device and the recording device of all applications
 	def _resetAllSessionDevice(self):
