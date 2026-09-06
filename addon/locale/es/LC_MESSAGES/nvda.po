@@ -1,0 +1,294 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Audio Manager 1.0.9\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2024-04-03 20:41+0300\n"
+"PO-Revision-Date: 2026-09-06 16:32-0300\n"
+"Last-Translator: \n"
+"Language-Team: Ana Giselle\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Bookmarks: -1,28,-1,-1,-1,-1,-1,-1,-1,-1\n"
+
+#. Translators: Category name
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: addon\globalPlugins\audioManager\__init__.py:18 buildVars.py:23
+msgid "Audio Manager"
+msgstr "Audio Manager"
+
+#. Translators: Reset the playback and recording device of all audio applications
+#: addon\globalPlugins\audioManager\__init__.py:56
+msgid "Reset the playback and recording device of all audio applications"
+msgstr ""
+"Restablecer el dispositivo de reproducción y grabación de todas las "
+"aplicaciones de audio"
+
+#. Translators: Reset the playback volume of all audio applications and unmute them
+#: addon\globalPlugins\audioManager\__init__.py:68
+msgid "Reset the playback volume of all audio applications and unmute them"
+msgstr ""
+"Restablecer el volumen de reproducción de todas las aplicaciones de audio y "
+"reactivar su sonido"
+
+#. Translators: Next playback device
+#: addon\globalPlugins\audioManager\__init__.py:96
+msgid "Next playback device"
+msgstr "Siguiente dispositivo de reproducción"
+
+#. Translators: Previous playback device
+#: addon\globalPlugins\audioManager\__init__.py:106
+msgid "Previous playback device"
+msgstr "Anterior dispositivo de reproducción"
+
+#. Translators: Next Recording device
+#: addon\globalPlugins\audioManager\__init__.py:116
+msgid "Next Recording device"
+msgstr "Siguiente dispositivo de grabación"
+
+#. Translators: Previous Recording device
+#: addon\globalPlugins\audioManager\__init__.py:126
+msgid "Previous Recording device"
+msgstr "Anterior dispositivo de grabación"
+
+#. Translators: Next audio application
+#: addon\globalPlugins\audioManager\__init__.py:136
+msgid "Next audio application"
+msgstr "Siguiente aplicación de audio"
+
+#. Translators: Previous audio application
+#: addon\globalPlugins\audioManager\__init__.py:146
+msgid "Previous audio application"
+msgstr "Anterior aplicación de audio"
+
+#. Translators: Volume up
+#: addon\globalPlugins\audioManager\__init__.py:156
+#: addon\globalPlugins\audioManager\audioNavigator.py:27
+msgid "Volume up"
+msgstr "Subir volumen"
+
+#. Translators: Please select a device or audio application first
+#: addon\globalPlugins\audioManager\__init__.py:162
+#: addon\globalPlugins\audioManager\__init__.py:179
+#: addon\globalPlugins\audioManager\__init__.py:198
+msgid "Please select a device or audio application first"
+msgstr "Selecciona primero un dispositivo o una aplicación de audio"
+
+#. Translators: Volume down
+#: addon\globalPlugins\audioManager\__init__.py:173
+#: addon\globalPlugins\audioManager\audioNavigator.py:29
+msgid "Volume down"
+msgstr "Bajar volúmen"
+
+#. Translators: Mute or unmute the playback or the recording devices
+#: addon\globalPlugins\audioManager\__init__.py:190
+msgid "Mute or unmute the playback or the recording devices"
+msgstr ""
+"Silenciar o reactivar el sonido de los dispositivos de reproducción o "
+"grabación"
+
+#. Translators: Set to as default playback or recording device
+#: addon\globalPlugins\audioManager\__init__.py:203
+msgid "Set to as default playback or recording device"
+msgstr "Establecer como dispositivo predeterminado de reproducción o grabación"
+
+#. Translators: Please select a playback or recording device first
+#: addon\globalPlugins\audioManager\__init__.py:211
+msgid "Please select a playback or recording device first"
+msgstr "Selecciona primero un dispositivo de reproducción o grabación"
+
+#. Translators: Next the playback device of the audio application
+#: addon\globalPlugins\audioManager\__init__.py:216
+msgid "Next the playback device of the audio application"
+msgstr "Siguiente dispositivo de reproducción de la aplicación de audio"
+
+#. Translators: Please select an audio application first
+#: addon\globalPlugins\audioManager\__init__.py:224
+#: addon\globalPlugins\audioManager\__init__.py:237
+#: addon\globalPlugins\audioManager\__init__.py:250
+#: addon\globalPlugins\audioManager\__init__.py:263
+msgid "Please select an audio application first"
+msgstr "Selecciona primero una aplicación de audio"
+
+#. Translators: Previous the playback device of the audio application
+#: addon\globalPlugins\audioManager\__init__.py:229
+msgid "Previous the playback device of the audio application"
+msgstr "Anterior dispositivo de reproducción de la aplicación de audio"
+
+#. Translators: Previous the recording device of the audio application
+#: addon\globalPlugins\audioManager\__init__.py:242
+msgid "Previous the recording device of the audio application"
+msgstr "Anterior dispositivo de grabación de la aplicación de audio"
+
+#. Translators: Next the recording device of the audio application
+#: addon\globalPlugins\audioManager\__init__.py:255
+msgid "Next the recording device of the audio application"
+msgstr "Siguiente dispositivo de grabación de la aplicación de audio"
+
+#. Translators: Click to reset the playback and recording devices of all audio applications; Double click to reset the volume of all audio applications and unmute them
+#: addon\globalPlugins\audioManager\__init__.py:268
+msgid ""
+"Click to reset the playback and recording devices of all audio applications; "
+"Double click to reset the volume of all audio applications and unmute them"
+msgstr ""
+"Haz clic para restablecer los dispositivos de reproducción y grabación de "
+"todas las aplicaciones de audio; haz doble clic para restablecer el volumen "
+"de todas las aplicaciones de audio y reactivar su sonido"
+
+#. Translators: Microphone switch
+#: addon\globalPlugins\audioManager\__init__.py:281
+msgid "Microphone switch"
+msgstr "Interruptor del micrófono"
+
+#. Translators: The microphone turned off and turned on
+#: addon\globalPlugins\audioManager\__init__.py:293
+msgid "The microphone turned off"
+msgstr "El micrófono se ha desactivado"
+
+#: addon\globalPlugins\audioManager\__init__.py:293
+msgid "The microphone turned on"
+msgstr "El micrófono se ha activado"
+
+#. Translators: Soundswitch
+#: addon\globalPlugins\audioManager\__init__.py:300
+msgid "Sound switch"
+msgstr "Interruptor de sonido"
+
+#. Translators: The sound turned off and turned on
+#: addon\globalPlugins\audioManager\__init__.py:312
+msgid "The sound turned off"
+msgstr "El sonido se ha desactivado"
+
+#: addon\globalPlugins\audioManager\__init__.py:312
+msgid "The sound turned on"
+msgstr "El sonido se ha activado"
+
+#. Translators: Mute or unmute the current window application
+#: addon\globalPlugins\audioManager\__init__.py:319
+msgid "Mute or unmute the current window application"
+msgstr "Silenciar o reactivar el sonido de la aplicación en la ventana actual"
+
+#. Translators: The current window is muted or unmuted
+#: addon\globalPlugins\audioManager\__init__.py:330
+msgid "The current window is muted"
+msgstr "La ventana actual está silenciada"
+
+#: addon\globalPlugins\audioManager\__init__.py:330
+msgid "The current window is unmuted."
+msgstr "Se ha reactivado el sonido de la ventana actual."
+
+#. Translators: Lock microphone volume
+#: addon\globalPlugins\audioManager\__init__.py:337
+msgid "Lock microphone volume"
+msgstr "Bloquear volumen del micrófono"
+
+#. translators: Locked or unlocked the microphone volume
+#: addon\globalPlugins\audioManager\__init__.py:347
+msgid "Locked the microphone volume"
+msgstr "Volumen del micrófono bloqueado"
+
+#: addon\globalPlugins\audioManager\__init__.py:348
+msgid "Unlocked the microphone volume"
+msgstr "Volumen del micrófono desbloqueado"
+
+#. Translators: Next NVDA playback device
+#: addon\globalPlugins\audioManager\__init__.py:355
+msgid "Next NVDA playback device"
+msgstr "Siguiente dispositivo de reproducción de NVDA"
+
+#. Translators: Previous NVDA playback device
+#: addon\globalPlugins\audioManager\__init__.py:364
+msgid "Previous NVDA playback device"
+msgstr "Anterior dispositivo de reproducción de NVDA"
+
+#. Translators: System volume
+#: addon\globalPlugins\audioManager\audioManager.py:13
+msgid "System sound"
+msgstr "Sonido del sistema"
+
+#. Translators: Volume field name
+#: addon\globalPlugins\audioManager\audioNavigator.py:25
+msgid "Volume"
+msgstr "Volúmen"
+
+#. Translators: Maxmium volume
+#: addon\globalPlugins\audioManager\audioNavigator.py:31
+msgid "Maximum volume"
+msgstr "Volumen máximo"
+
+#. Translators: Minimual volume
+#: addon\globalPlugins\audioManager\audioNavigator.py:33
+msgid "Minimual volume"
+msgstr "Volumen mínimo"
+
+#. Translators: Muted
+#: addon\globalPlugins\audioManager\audioNavigator.py:35
+msgid "Muted"
+msgstr "Silenciado"
+
+#. Translators: Unmuted
+#: addon\globalPlugins\audioManager\audioNavigator.py:37
+msgid "Unmuted"
+msgstr "Sonido reactivado"
+
+#. Translators: As default playback device
+#: addon\globalPlugins\audioManager\audioNavigator.py:39
+msgid "As default playback device"
+msgstr "Como dispositivo de reproducción predeterminado"
+
+#. Translators: As default recording device
+#: addon\globalPlugins\audioManager\audioNavigator.py:41
+msgid "As default recording device"
+msgstr "Como dispositivo de grabación predeterminado"
+
+#. Translators: Default playback device
+#: addon\globalPlugins\audioManager\audioNavigator.py:43
+msgid "Default playback device"
+msgstr "Dispositivo de reproducción predeterminado"
+
+#. Translators: Default recording device
+#: addon\globalPlugins\audioManager\audioNavigator.py:45
+msgid "Default recording device"
+msgstr "Dispositivo de grabación predeterminado"
+
+#: addon\globalPlugins\audioManager\audioNavigator.py:503
+msgid "Microsoft Sound Mapper"
+msgstr "Controlador primario de sonido de Microsoft"
+
+#. Translators: The system you are using is not supported. This add-on needs to be running on a Windows 10 or higher system.
+#: addon\installTasks.py:29
+msgid ""
+"The system you are using is not supported. This add-on needs to be running "
+"on a Windows 10 or higher system."
+msgstr ""
+"El sistema que estás utilizando no es compatible. Este complemento requiere "
+"ejecutarse en Windows 10 o superior."
+
+#. Translators: The title
+#: addon\installTasks.py:29 addon\installTasks.py:42
+msgid "Warning"
+msgstr "Advertencia"
+
+#. Translators: The message
+#: addon\installTasks.py:40
+msgid ""
+"We have detected a conflict between the 'AudioControl' add-on you have "
+"installed and the add-on you are currently installing. Click 'Yes' to "
+"automatically uninstall and install the conflicting add-on or click' No 'to "
+"install without uninstalling."
+msgstr ""
+"Se ha detectado un conflicto entre el complemento «AudioControl» instalado y "
+"el complemento que estás instalando actualmente. Haz clic en «Sí» para "
+"desinstalar e instalar automáticamente el complemento en conflicto, o haz "
+"clic en «No» para instalar sin desinstalar."
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid "An add-on of NVDA for system audio management."
+msgstr "Un complemento de NVDA para la gestión del audio del sistema."
